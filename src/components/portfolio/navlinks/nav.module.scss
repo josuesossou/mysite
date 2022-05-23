@@ -1,0 +1,26 @@
+.nav {
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #031229;
+    border-radius: 1em;
+    cursor: pointer;
+    
+    .a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        font-size: 1em;
+        padding: .5em 1em;
+        margin: 0;
+        position: relative;
+        border-radius: 1em;
+
+    }
+
+    .a:hover {
+        background-color: #011B41;
+        transition: ease-in-out .5s;
+    }
+}

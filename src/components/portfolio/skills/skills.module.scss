@@ -1,0 +1,14 @@
+  
+#skills {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5em 0;
+
+    .div {
+        width: 25%;
+        height: 20em;
+        border: 1px solid #a0a5ba;
+    }
+}
