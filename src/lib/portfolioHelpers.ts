@@ -1,8 +1,6 @@
-import Portfolio from "../../pages"
-import * as Data from '../../data/portfolioData.json'
+import * as data from '../../data/portfolioData.json'
+import {Portfolio} from './types'
 
-export const getAboutString = ():string => {
-    console.log(Data)
-    console.log('hi')
-    return 'hell'
+export const getAboutString = ():Portfolio => {
+    return data
 }

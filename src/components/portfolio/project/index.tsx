@@ -1,7 +1,11 @@
 import styles from './project.module.scss'
 import sharedStyles from '../../styles/shared.module.scss'
+import { Projects } from '../../../lib/types'
+import ProjectCard from './pojectCard'
 
-const Project = () => {
+const Project = ({ data }: any) => {
+    const projects: Projects = data
+
     return (
         <div id="project">
             <div className={sharedStyles.wrapper} id={styles.wProject}>
@@ -12,19 +16,16 @@ const Project = () => {
                 </div>
 
                 <div id={styles.showcaseProj}>
-                    <div className={styles.div}>hello</div>
-                    <div className={styles.div}>hello</div>
+                    {projects.showcase.map((proj, ind) => (
+                        <ProjectCard key={ind} data={proj} isShowCase />
+                    ))}
                 </div>
 
                 <div id={styles.collapseProj}>
-                    <div className={styles.div}>hello</div>
-                    <div className={styles.div}>hello</div>
-                    <div className={styles.div}>hello</div>
-                    <div className={styles.div}>hello</div>
-                    <div className={styles.div}>hello</div>
-                    <div className={styles.div}>hello</div>
+                    {projects.regular.map((proj, ind) => (
+                       <ProjectCard key={ind} data={proj} />
+                    ))}
                 </div>
-                {/* <button>View More</button> */}
             </div>
         </div>
     )
