@@ -1,4 +1,5 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import { getAboutString } from '../src/lib/portfolioHelpers'
 import Head from 'next/head'
 import Main from '../src/components/portfolio/main'
 import NavLinks from '../src/components/portfolio/navlinks'
@@ -6,7 +7,7 @@ import Project from '../src/components/portfolio/project'
 import Skills from '../src/components/portfolio/skills'
 import About from '../src/components/portfolio/about'
 import Footer from '../src/components/footer'
-import { getAboutString } from '../src/lib/portfolioHelpers'
+import ProjectOverlay from '../src/components/portfolio/project/projectOverlay'
 
 const PortfolioPage: NextPage = ({ 
     aboutText,

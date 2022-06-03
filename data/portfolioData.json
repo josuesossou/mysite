@@ -3,65 +3,173 @@
         "showcase": [
             {
                 "title": "Countdown Timer",
-                "description": "hello",
-                "images": [],
+                "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?",
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             },
             {
                 "title": "Countdown Timer",
                 "description": "hello",
-                "images": [],
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [                    
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             }
         ],
         "regular": [
             {
                 "title": "Countdown Timer",
-                "description": "hello",
-                "images": [],
+                "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?",
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             },
             {
                 "title": "Countdown Timer",
                 "description": "hello",
-                "images": [],
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             },
             {
                 "title": "Countdown Timer",
                 "description": "hello",
-                "images": [],
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             },
             {
                 "title": "Countdown Timer",
                 "description": "hello",
-                "images": [],
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             },
             {
                 "title": "Countdown Timer",
                 "description": "hello",
-                "images": [],
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             },
             {
                 "title": "Countdown Timer",
                 "description": "hello",
-                "images": [],
+                "images": [
+                    {
+                        "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                        "details": ""
+                    }
+                ],
                 "link": "",
-                "tools": ["React"]
+                "tools": [
+                    {
+                        "name": "React",
+                        "icon": "reactIcon"
+                    }
+                ]
             }
         ]
     },
     "skills": [
+        {
+            "name": "JavaScript",
+            "icon": ""
+        },
+        {
+            "name": "JavaScript",
+            "icon": ""
+        },
+        {
+            "name": "JavaScript",
+            "icon": ""
+        },
+        {
+            "name": "JavaScript",
+            "icon": ""
+        },
+        {
+            "name": "JavaScript",
+            "icon": ""
+        },
+        {
+            "name": "JavaScript",
+            "icon": ""
+        },
+        {
+            "name": "JavaScript",
+            "icon": ""
+        },
         {
             "name": "JavaScript",
             "icon": ""

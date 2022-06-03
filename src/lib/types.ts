@@ -1,10 +1,9 @@
-
 export type Project = {
     title: string,
     description: string,
-    images: string[],
+    images: Img[],
     link: string,
-    tools: string[]
+    tools: Skill[]
 }
 export type Projects = {
     showcase: Project[],
@@ -13,6 +12,10 @@ export type Projects = {
 export type Skill = {
     name: string,
     icon: string
+}
+export type Img = {
+    img: string,
+    details: string
 }
 export type Portfolio = {
     about: string,
