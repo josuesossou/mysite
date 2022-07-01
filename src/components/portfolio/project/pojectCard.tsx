@@ -82,12 +82,15 @@ const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
                             </div>
 
                             {tool.name}
+
+                            
                         </div>
                     ))}
                 </div>
+                <h2>{proj.id}</h2>
                 <button 
                     className={styles.btn}
-                    onClick={openOverlay}
+                    onClick={() => openOverlay(proj.id)}
                 >   
                     Open
                 </button>

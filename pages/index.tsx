@@ -7,7 +7,6 @@ import Project from '../src/components/portfolio/project'
 import Skills from '../src/components/portfolio/skills'
 import About from '../src/components/portfolio/about'
 import Footer from '../src/components/footer'
-import ProjectOverlay from '../src/components/portfolio/project/projectOverlay'
 
 const PortfolioPage: NextPage = ({ 
     aboutText,

@@ -1,13 +1,11 @@
 export type Project = {
+    id: number,
     title: string,
     description: string,
     images: Img[],
     link: string,
-    tools: Skill[]
-}
-export type Projects = {
-    showcase: Project[],
-    regular: Project[]
+    tools: Skill[],
+    showcase?: boolean
 }
 export type Skill = {
     name: string,
@@ -20,5 +18,5 @@ export type Img = {
 export type Portfolio = {
     about: string,
     skills: Skill[],
-    projects: Projects
+    projects: Project[]
 }
