@@ -1,74 +1,98 @@
 .header {
     min-height: 100vh;
     min-height: 100dvh;
-    // width: 100%;
     background-color: #031229;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-rows: 2fr 1fr 1fr 1fr 2fr;
+    grid-template-areas: 
+        'title'
+        'welcome'
+        'button1' 
+        'button2'
+        'icons';
     align-items: center;
-    // justify-content: stretch;\
+    // flex-direction: column;
+    // align-items: stretch;
     color: #ffffff;
     position: relative;
 
-    > * {
-        // flex-basis: 100%;
-        flex-grow: 1;
-    }
+    // > * {
+    //     // flex-grow: 1;
+    // }
 
-    > div:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        opacity: 0;
-        gap: 1.7em;
-        animation: fadeIn 1s ease-in forwards;
+    // > div:nth-child(2) {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     opacity: 0;
+    //     gap: 1.7em;
+    //     animation: fadeIn 1s ease-in forwards;
 
 
         h1 {
-            margin-top: auto;
-            font-size: 3em;
+            grid-area: title;
+            margin: auto auto 0 auto;
+            font-size: 2em;
+            // width: auto;
+            // display: inline-block;
+            text-align: center;
+            // align-self: center;
         }
 
         h2 {
-            overflow: hidden;
-            align-self: center;
-            white-space: nowrap;
-            border-right: 2px solid;
-            width: 0;
-            animation: 
-            typing 1.5s steps(40, end) 1s forwards,
-            blink-caret .65s step-end infinite,
-            fadeOut .65s step-end forwards 3.5s;
+            grid-area: welcome;
+            justify-self: center;
+           
+            // width: 100%;
+            // width: max-content;
+            // flex-shrink: 0;
+            // flex-grow: 0;
+            // min-width: 0;
+            // transform: scaleX(0);
+
         }
         
-    }
-    > div:nth-child(3) {
-        display: flex;
-        opacity: 0;
-        animation: fadeIn 1s forwards 3s;
+    // }
+    // > div:nth-child(3) {
+    //     grid-area: title;
+    //     // display: flex;
+    //     flex-direction: column;
+    //     opacity: 0;
+    //     animation: fadeIn 1s forwards 3s;
 
-        a {
+        a:nth-of-type(1) {
+            justify-self: center;
+            grid-area: button1;
             margin: auto 0;
+        }
+        a:nth-of-type(2) {
+            justify-self: center;
+            grid-area: button2;
         }
 
         button {
             background-color: transparent;
             color: white;
-            padding: 0.5em 2em;
-            border: white 2px outset;
+            padding: 0.5em 3em;
+            font-size: 2em;
+            border: white 4px outset;
             cursor: pointer;
 
         }
         
         button:active:hover {
-            border: white 2px inset;
+            border: 2px inset;
         }
-    }
+    // }
 
-    > div:nth-child(4) {
+    > div:nth-of-type(2) {
+        grid-area: icons;
+        justify-self: center;
+        align-self: center;
+        width: max-content;
         display: flex;
         gap: 2em;
-        opacity: 0;
-        animation: fadeIn 1s forwards 4s;
 
         > * {
             margin-bottom: auto;
@@ -95,12 +119,70 @@
 
 /* The typing effect */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 46% }
-  }
+    from { width: 0; }
+    to { width: 13em }
+}
   
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: white; }
+}
+
+@media (min-width:55em) {
+    .header  {
+        grid-template-areas: 
+            'title title'
+            'welcome welcome'
+            'button1 button2' 
+            'icons icons';
+
+        > a button {
+            padding: 0.5em 2em;
+            font-size: 1em;
+            border-width: 1px;
+        }
+        
+        > div:nth-of-type(2) {
+            opacity: 0;
+            animation: fadeIn 1s forwards 4s;
+        }
+        > a button:active:hover {
+            border: 2px inset;
+        }
+        a:nth-of-type(1) {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards 3s;
+            justify-self: right;
+        }
+        a:nth-of-type(2) {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards 3s;
+            justify-self: left;
+        }
+
+        h1 {
+            // margin-top: auto;
+            animation: fadeIn 1s ease-in forwards;
+            font-size: 3em;
+        }
+
+        h2 {
+            border-right: 2px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation:
+            fadeIn 1s ease-in forwards, 
+            typing 1.5s steps(40, end) 1s forwards,
+            blink-caret .65s step-end infinite,
+            fadeOut .65s step-end forwards 3.5s;
+        }
+     
+    }
+
+    // @keyframes typing {
+    //     from { width: 0 }
+    //     to { width: 46% }
+    // }
 }

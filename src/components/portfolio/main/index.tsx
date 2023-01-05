@@ -9,24 +9,24 @@ const Main = () => {
         <header className={styles.header} id="home">
             {/* <div className={sharedStyles.wrapper} id={styles.home}> */}
                 <Logo />
-                <div>
-                    <h1>Software Engineer | Developer</h1>
-                    <h2>
-                        Hi, Welcome to my portfolio
-                    </h2>
-                </div>
+                {/* <div> */}
+                <h1>Software Engineer | Developer</h1>
+                <h2>
+                    Hi, Welcome to my portfolio
+                </h2>
+                {/* </div> */}
 
-                <div className={styles.buttonGroup}>
-                    <a>
-                        <button 
-                            aria-modal={true} 
-                            aria-control='Resume Popup'  
-                        >Resume</button>
-                    </a>
-                    <a href='#skills' aria-flowto='#skills'>
-                        <button>Contact</button>
-                    </a>
-                </div>
+                {/* <div className={styles.buttonGroup}> */}
+                <a>
+                    <button 
+                        aria-modal={true} 
+                        aria-control='Resume Popup'  
+                    >Resume</button>
+                </a>
+                <a href='#skills' aria-flowto='#skills'>
+                    <button>Contact</button>
+                </a>
+                {/* </div> */}
                 <div>
                     <a href='https://www.linkedin.com/in/josue-sossou' target='_blank'>
                         <FontAwesomeIcon icon={faLinkedin} size={"2x"} color={'white'} />

@@ -5,19 +5,17 @@ const About = ({ aboutText } : any) => {
     const text: string = aboutText
 
     return (
-        <div id='about'>
-            <div className={sharedStyles.wrapper} id={styles.about}>
-                <div className={sharedStyles.wrapTitle}>
+        <section id='about' className={styles.about}>
+                {/* <div className={sharedStyles.wrapTitle}>
                     <h2 className={sharedStyles.h2}>About</h2>
                     <div className={sharedStyles.underlineTop}></div>
                     <div className={sharedStyles.underlineBottom}></div>
-                </div>
+                </div> */}
 
-                <article style={{ textAlign: 'center', width: '60%' }}>
-                    {text}
-                </article>
-            </div>
-        </div>
+            <article>
+                {text}
+            </article>
+        </section>
     )
 }
 
