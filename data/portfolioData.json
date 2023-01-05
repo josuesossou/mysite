@@ -55,7 +55,8 @@
                     "name": "React",
                     "icon": "reactIcon"
                 }
-            ]
+            ],
+            "showcase": true
         },
         {
             "id": 3,
@@ -73,7 +74,8 @@
                     "name": "React",
                     "icon": "reactIcon"
                 }
-            ]
+            ],
+            "showcase": true
         },
         {
             "id": 4,
@@ -150,35 +152,35 @@
     ],
     "skills": [
         {
-            "name": "JavaScript",
+            "name": "Java Script",
             "icon": ""
         },
         {
-            "name": "JavaScript",
+            "name": "React",
             "icon": ""
         },
         {
-            "name": "JavaScript",
+            "name": "Typescript",
             "icon": ""
         },
         {
-            "name": "JavaScript",
+            "name": "Flutter",
             "icon": ""
         },
         {
-            "name": "JavaScript",
+            "name": "NodeJS",
             "icon": ""
         },
         {
-            "name": "JavaScript",
+            "name": "AWS",
             "icon": ""
         },
         {
-            "name": "JavaScript",
+            "name": "MongoDB",
             "icon": ""
         },
         {
-            "name": "JavaScript",
+            "name": "Firebase",
             "icon": ""
         }
     ],

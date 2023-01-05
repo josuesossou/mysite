@@ -30,6 +30,8 @@ const toolsIcons: IconImages  = {
     pythonIcon: pythonIcon
 }
 
+
+
 const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
     const proj: Project = data
     const ref = useRef<HTMLDivElement>(null)
@@ -41,7 +43,6 @@ const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
             const eleTop = ref.current.offsetTop + 150
 
             if (pageH < eleTop) return 
-            console.log('yes')
             ref.current.style.animationPlayState = 'running'
         }
 
@@ -50,15 +51,16 @@ const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
     }, [])
 
     return (
-        <div className={styles.div} ref={ref}>
-            <div className={styles.icon}>
-                {isShowCase && <FontAwesomeIcon icon={faStar} size={"2x"} color={'gold'} />}
-            </div>
+        <div className={styles.pCard} ref={ref}>
+            {/* <div className={styles.icon}>
+                {isShowCase && <FontAwesomeIcon icon={faStar} size={"1x"} color={'gold'} />}
+            </div> */}
 
-            <div className={styles.img}>
+            <div className={styles.cardImage}>
                 <Image 
+                    loading="lazy"
                     layout="fill"
-                    objectFit="fill"
+                    objectFit="contain"
                     src={proj.images[0].img}   
                 />
             </div>

@@ -2,7 +2,7 @@ import styles from  './logo.module.scss'
 
 const Logo = () => {
     return (
-        <div id={styles.logo}></div>
+        <div className={styles.logo}></div>
     )
 }
 

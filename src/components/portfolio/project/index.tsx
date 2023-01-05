@@ -34,46 +34,42 @@ const ProjectComp = ({ data }: any) => {
     }, [])
 
     return (
-        <div id="project">
-            <div className={sharedStyles.wrapper} id={styles.wProject}>
-                <div className={sharedStyles.wrapTitle}>
-                    <h2 className={sharedStyles.h2}>Projects</h2>
-                    <div className={sharedStyles.underlineTop}></div>
-                    <div className={sharedStyles.underlineBottom}></div>
-                </div>
+        <section id="project">
 
-                <div id={styles.showcaseProj}>
-                    {projects.map((proj, ind) => proj.showcase && (
-                        <ProjectCard 
-                            key={ind} 
-                            data={proj} 
-                            isShowCase 
-                            openOverlay={onViewClicked}
-                        />
-                    ))}
-                </div>
+            <h2 className={sharedStyles.title}>Projects</h2>
 
-                <div id={styles.collapseProj}>
-                    {collapseData.map((proj, ind) => !proj.showcase && (
-                       <ProjectCard 
-                            key={ind}
-                            data={proj} 
-                            openOverlay={onViewClicked}
-                        />
-                    ))}
-                </div>
-
-                <button 
-                    id={styles.viewMore}
-                    onClick={() => showMore()}>View More</button>
+            <div className={styles.showcaseProj}>
+                {projects.map((proj, ind) => proj.showcase && (
+                    <ProjectCard 
+                        key={ind} 
+                        data={proj} 
+                        isShowCase
+                        openOverlay={onViewClicked}
+                    />
+                ))}
             </div>
+
             {showOverlay && <ProjectOverlay 
                 current={projIndex}
                 close={() => setOverlay(false)} 
                 list={projects.sort((pa, pb) => pa.id - pb.id)}
             />}
-        </div>
+        </section>
     )
 }
 
 export default ProjectComp
+
+// {/* <div id={styles.collapseProj}>
+//     {collapseData.map((proj, ind) => !proj.showcase && (
+//        <ProjectCard 
+//             key={ind}
+//             data={proj} 
+//             openOverlay={onViewClicked}
+//         />
+//     ))}
+// </div> */}
+
+// {/* <button 
+//     id={styles.viewMore}
+//     onClick={() => showMore()}>View More</button> */}

@@ -8,34 +8,36 @@ import styles from './project.module.scss'
 const ProjectOverlay = ({ list, current, close }: any) => {
     const [showProject, setShowProject] = useState(false)
     const [projIndex, setProjIndex] = useState<number>(current-1)
+    const [slideshowPauseIndex, setPauseIndex] = useState<number>(-1)
     const sliderRef = useRef<HTMLDivElement>(null)
     const projects: Project[] = list
-    let els: number
-
+    let imagesLength: number
+    let currImgNodes: NodeListOf<Element> 
     let animationSubs: NodeJS.Timeout | undefined
+    let playingBookFlipAnim: boolean
 
     const showProjectSlider = () => setShowProject(!showProject)
 
-    /** Start of slideshow animation triggeres */
+    /** Start of slideshow animation Functions */
     const slideAwayAnimation = () => {
-        console.log('slideaway')
-        const eles = document.querySelectorAll(`.${styles.currentImg}`)
-        for (let i=0; i < eles.length; i++) {
-            const ele = eles[i]
+        playingBookFlipAnim = false
+        
+        for (let i=0; i < currImgNodes.length; i++) {
+            const ele = currImgNodes[i]
             ele.classList.add(styles.slideAwayAnime)
-            ele.setAttribute('style', `animation-delay: ${(eles.length*3) - (i * 3)}s`)
-            ele.classList.remove(styles.backFlipAnime)
+            ele.setAttribute('style', `animation-delay: ${(currImgNodes.length*2) - (i * 2)}s`)
+            ele.classList.remove(styles.bookFlipAnime)
         }
+
         clearTimeout(animationSubs)
         bookFlipAnimationTrigger()
     }
 
     const bookFlipAnimation = () => {
-        console.log('bookFlip')
-        const eles = document.querySelectorAll(`.${styles.currentImg}`)
-        for (let i=0; i < eles.length; i++) {
-            const ele = eles[i]
-            ele.classList.add(styles.backFlipAnime)  
+        playingBookFlipAnim = true
+        for (let i=0; i < currImgNodes.length; i++) {
+            const ele = currImgNodes[i]
+            ele.classList.add(styles.bookFlipAnime)  
             ele.setAttribute('style', `animation-delay: ${(i)/2}s`)
             ele.classList.remove(styles.slideAwayAnime)
         }
@@ -43,27 +45,86 @@ const ProjectOverlay = ({ list, current, close }: any) => {
         slideAwayAnimationTrigger()
     }
 
-    // Animation trigger for the slideshow
+    /**  Animation trigger for the slideshow **/
     const bookFlipAnimationTrigger = () => {
-        console.log('ELS Length',els)
-        animationSubs = setTimeout(bookFlipAnimation, ((els*3000)+5000))
-
+        animationSubs = setTimeout(bookFlipAnimation, ((imagesLength*2000)+1000))
     }
 
     const slideAwayAnimationTrigger = () => {
-        animationSubs = setTimeout(slideAwayAnimation, els*1000)
+        animationSubs = setTimeout(slideAwayAnimation, imagesLength*500)
+    }
+    /** End of Animation triggers **/
+
+    /*** stop animation and user control for top slideshow starts here */
+    const pauseAnimation = () => {
+        let computedTop
+        clearTimeout(animationSubs)
+        for (let i=0; i < currImgNodes.length; i++) {
+            const ele = currImgNodes[i]
+                
+            ele.getAnimations().every((val) => {
+                if (playingBookFlipAnim === true) {
+                    val.playbackRate = 10
+                    val.play()
+                } else {
+                    val.pause()
+                }
+            })
+
+            if (playingBookFlipAnim !== true) {
+                if (i+1 < currImgNodes.length) {
+                    computedTop = window.getComputedStyle(currImgNodes[i+1]).top
+                    if (slideshowPauseIndex === -1 && computedTop !== '0px' ) {// second-check checks if the element is in the view
+                        setPauseIndex(i)
+                    }
+                }
+            } else {
+                console.log('imagesLength', imagesLength)
+                setPauseIndex(imagesLength-1)
+            }
+        }
+
+        if (slideshowPauseIndex === -1) {
+
+        }
+
+        // will remove later
+        if (playingBookFlipAnim === true) {
+            playingBookFlipAnim = false
+        }
+
     }
 
-    /// pause the animation on hover and reverse or move forward when forward and redo buttons are clicked
-    /** Start of slideshow animation triggeres */
-    // useEffect here **********
+    const moveForward = () => {
+        const currImgNodes = document.querySelectorAll(`.${styles.currentImg}`)
+        // console.log(currImgNodes.length, slideshowPauseIndex)
+        const node = currImgNodes[6]
+        node.classList.remove(styles.slideAwayAnime)
+        node.classList.add(styles.slideAwayAnime)
+        node.getAnimations().every(val => val.play())
+
+        // node.animate([{top: '100px'}], 1).play()
+        // node.classList.add(styles.slideAwayAnime)
+
+        // currImgNodes[]
+        // currImgNodes[slideshowPauseIndex].getAnimations().every(val => val.play())
+    }
+    const moveBackward = () => {
+
+    }
+
+
+    /** useEffect here **********/
     useEffect(() => {
-        els = document.querySelectorAll(`.${styles.currentImg}`).length
+        currImgNodes = document.querySelectorAll(`.${styles.currentImg}`)
+        imagesLength = currImgNodes.length
+        const slideshowOverlayEle = document.getElementById(styles.slideShowOverlay)
+        slideshowOverlayEle?.addEventListener('mouseenter', pauseAnimation)
         bookFlipAnimation()
     }, [])
+    /** UseEffect End here */
 
-
-
+    /** Move slider for small slider at the bottom starts here */
     const moveSlider = (left:boolean) => { /// for small slider at the bottom of overlay
         if (!sliderRef.current) return
 
@@ -84,7 +145,11 @@ const ProjectOverlay = ({ list, current, close }: any) => {
 
         setProjIndex(newIndex)
     }
+    /** End for the slider at the bottom */
 
+
+
+    /** Render Return */
     return (
         <div id={styles.overlay}>
             <div className={styles.closeBtn} onClick={close} />
@@ -112,9 +177,12 @@ const ProjectOverlay = ({ list, current, close }: any) => {
                             <h1 style={{ zIndex: 10, position: 'absolute' }}>{data}</h1>
                         </div>
                     ))}
-                    {/* <div className={styles.currentImg}></div>
-                    <div className={styles.currentImg}></div> */}
+                    
+                </div>
 
+                <div id={styles.slideShowOverlay}>
+                    <div onClick={moveBackward}> left </div>
+                    <div onClick={moveForward}> right </div>
                 </div>
 
                 {/***** Start for the small carousel slider for the whole slider,
@@ -170,7 +238,7 @@ const ProjectOverlay = ({ list, current, close }: any) => {
                 {/*****  Small carousel end here *****/}
                 
                 {/* Button to show and hide small carousel slider */}
-                <div 
+                {/* <div 
                     id={styles.carouselBtn}
                     className={!showProject ? 
                         styles.showCarouselBtn : styles.hideCarouselBtn}
@@ -180,7 +248,7 @@ const ProjectOverlay = ({ list, current, close }: any) => {
                         <FontAwesomeIcon icon={faArrowDown} size={"1x"} color={'#031229'} />
                     </div>
                     <small>Projects</small>
-                </div>
+                </div> */}
                 {/* button that show and hide small carousel end here */}
             </div>
         </div>

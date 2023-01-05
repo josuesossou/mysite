@@ -1,48 +1,106 @@
 .header {
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    // width: 100%;
     background-color: #031229;
-}
-
-#home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: stretch;\
     color: #ffffff;
     position: relative;
 
-    #logo {
-        width: 50px;
-        height: 50px;
-        background-color: black;
-        position: absolute;
-        top: 1px;
-        left: 1px
+    > * {
+        // flex-basis: 100%;
+        flex-grow: 1;
     }
 
-    h1 {
-        margin-bottom: 5em;
-        font-size: 3em;
-    }
-
-    #buttonGroup {
+    > div:nth-child(2) {
         display: flex;
-        flex-direction: row;
-        justify-content: stretch;
-        align-items: stretch;
+        flex-direction: column;
+        opacity: 0;
+        gap: 1.7em;
+        animation: fadeIn 1s ease-in forwards;
+
+
+        h1 {
+            margin-top: auto;
+            font-size: 3em;
+        }
+
+        h2 {
+            overflow: hidden;
+            align-self: center;
+            white-space: nowrap;
+            border-right: 2px solid;
+            width: 0;
+            animation: 
+            typing 1.5s steps(40, end) 1s forwards,
+            blink-caret .65s step-end infinite,
+            fadeOut .65s step-end forwards 3.5s;
+        }
+        
+    }
+    > div:nth-child(3) {
+        display: flex;
+        opacity: 0;
+        animation: fadeIn 1s forwards 3s;
+
+        a {
+            margin: auto 0;
+        }
 
         button {
             background-color: transparent;
             color: white;
             padding: 0.5em 2em;
             border: white 2px outset;
+            cursor: pointer;
+
         }
         
         button:active:hover {
             border: white 2px inset;
         }
-
     }
 
+    > div:nth-child(4) {
+        display: flex;
+        gap: 2em;
+        opacity: 0;
+        animation: fadeIn 1s forwards 4s;
+
+        > * {
+            margin-bottom: auto;
+        }
+    }
+
+
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} 
+@keyframes fadeOut{
+    from, to {
+        border-color: transparent;
+    }
+} 
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 46% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
 }
