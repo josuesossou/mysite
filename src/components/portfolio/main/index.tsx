@@ -20,7 +20,7 @@ const Main = () => {
                 <a>
                     <button 
                         aria-modal={true} 
-                        aria-control='Resume Popup'  
+                        // aria-control='resumePopup'  
                     >Resume</button>
                 </a>
                 <a href='#skills' aria-flowto='#skills'>
