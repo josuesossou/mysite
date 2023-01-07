@@ -1,8 +1,7 @@
 import Logo from '../logo'
 import styles from  './main.module.scss'
-import sharedStyles from '../../styles/shared.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faGithub, faGit } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Main = () => {
     return (

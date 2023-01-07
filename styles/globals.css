@@ -1,5 +1,13 @@
 :root {
-  --media-min-width: 55em
+  /* Theme colors */
+  --media-min-width: 55em;
+  --primary-color: #031229;
+  --secondary-color: #f5f8ff;
+  --track-primary-color: #f5f5f5;
+  --track-secondary-color: #777777;
+
+  /* shadow  */
+  --box-shadow: 0 10px 19px -10px #0312296f;
 }
 
 html,
@@ -34,17 +42,17 @@ body::-webkit-scrollbar {
 
 /* Track */
 body::-webkit-scrollbar-track {
-  background: #031229;
+  background: var(--primary-color);
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: #f5f5f5;
+  background: var(--track-primary-color);
   border-radius: 10px;
   transition: all 2s;
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: #777777;
+  background: var(--track-secondary-color);
 }

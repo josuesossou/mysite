@@ -37,17 +37,17 @@ const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
     const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        const checkNavPos = () => {
-            if (!ref || ! ref.current) return
-            const pageH = window.innerHeight + window.scrollY
-            const eleTop = ref.current.offsetTop + 150
+        // const checkNavPos = () => {
+        //     if (!ref || ! ref.current) return
+        //     const pageH = window.innerHeight + window.scrollY
+        //     const eleTop = ref.current.offsetTop + 150
 
-            if (pageH < eleTop) return 
-            ref.current.style.animationPlayState = 'running'
-        }
+        //     if (pageH < eleTop) return 
+        //     ref.current.style.animationPlayState = 'running'
+        // }
 
-        window.addEventListener('scroll', checkNavPos)
-        checkNavPos()
+        // window.addEventListener('scroll', checkNavPos)
+        // checkNavPos()
     }, [])
 
     return (
@@ -66,30 +66,27 @@ const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
             </div>
             
             <div className={styles.projDesc}>
-                <h3 className={styles.h3}>{proj.title}</h3>
-                <div style={{ marginBottom: '1.5em' }}>
-                    <b><small className={styles.small}>Description</small></b>
-                    <article>{proj.description}</article>
-                </div>
+                <h3>{proj.title}</h3>
+                {/* <div style={{ marginBottom: '1.5em' }}> */}
+                    {/* <b><small className={styles.small}>Description</small></b> */}
+                <article>{proj.description}</article>
+                {/* </div> */}
 
-                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                <div>
                     {proj.tools.map((tool, ind) => (
                         <div key={ind} className={styles.tools}>
-                            <div className={styles.iconImg}>
+                            <div>
                                 <Image 
                                     layout="fill"
                                     objectFit="cover"
                                     src={toolsIcons[tool.icon]}
                                 />
                             </div>
-
-                            {tool.name}
-
-                            
+                            <h4>{tool.name}</h4>
                         </div>
                     ))}
                 </div>
-                <h2>{proj.id}</h2>
+
                 <button 
                     className={styles.btn}
                     onClick={() => openOverlay(proj.id)}
