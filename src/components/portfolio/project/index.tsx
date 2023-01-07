@@ -9,50 +9,50 @@ const ProjectComp = ({ data }: any) => {
     const [collapseData, setCollapseData] = useState<Project[]>([])
     const [index, setIndex] = useState<number>(2)
     const [showOverlay, setOverlay] = useState(false)
-    const [projIndex, setPrIndex]  = useState<number>(0)
+    const [projectIndex, setProjectIndex]  = useState<number>(0)
     const projects: Project[] = data
 
-    const showMore = () => {
-        let projlist:Project[] = []
+    // const showMore = () => {
+    //     let projlist:Project[] = []
 
-        for (let i = index; i < index+3; i++) {
-            if (i >= projects.length) break
-            projlist.push(projects[i])
-        }
+    //     for (let i = index; i < index+3; i++) {
+    //         if (i >= projects.length) break
+    //         projlist.push(projects[i])
+    //     }
 
-        setCollapseData([...collapseData, ...projlist])
-        setIndex(index+3)
-    }
+    //     setCollapseData([...collapseData, ...projlist])
+    //     setIndex(index+3)
+    // }
 
-    const onViewClicked = (index:number) => {
-        setPrIndex(index)
+    const openOverlay = (index:number) => {
+        setProjectIndex(index)
         setOverlay(true)
     }
 
     useEffect(() => {
-        showMore()
+        // showMore()
     }, [])
 
     return (
         <section id="project">
-
             <h2 className={sharedStyles.title}>Projects</h2>
 
             <div className={styles.showcaseProj}>
-                {projects.map((proj, ind) => proj.showcase && (
+                {projects.map((proj, index) => proj.showcase && (
                     <ProjectCard 
-                        key={ind} 
+                        key={index}
+                        projectIndex={index} 
                         data={proj} 
                         isShowCase
-                        openOverlay={onViewClicked}
+                        openOverlay={openOverlay}
                     />
                 ))}
             </div>
 
             {showOverlay && <ProjectOverlay 
-                current={projIndex}
+                current={projectIndex}
                 close={() => setOverlay(false)} 
-                list={projects.sort((pa, pb) => pa.id - pb.id)}
+                projects={projects.sort((pa, pb) => pa.id - pb.id)}
             />}
         </section>
     )

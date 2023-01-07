@@ -1,5 +1,5 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
-import { getAboutString } from '../src/lib/portfolioHelpers'
+import { getData } from '../src/lib/portfolioHelpers'
 import Head from 'next/head'
 import Main from '../src/components/portfolio/main'
 import NavLinks from '../src/components/portfolio/navlinks'
@@ -9,7 +9,7 @@ import About from '../src/components/portfolio/about'
 import Footer from '../src/components/footer'
 
 const PortfolioPage: NextPage = ({ 
-    aboutText,
+    about,
     projects,
     skills
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -22,7 +22,7 @@ const PortfolioPage: NextPage = ({
         </Head>
        
         <Main />
-        <About aboutText={aboutText} />
+        <About data={about} />
         <Project data={projects} />
         <Skills data={skills}/>
         <Footer />
@@ -32,13 +32,13 @@ const PortfolioPage: NextPage = ({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const { about, skills, projects } = getAboutString()
+    const { about, skills, projects } = getData()
 
     return {
         props: {
-            aboutText: about,
-            skills: skills,
-            projects: projects
+            about,
+            skills,
+            projects
         }
     }
 }

@@ -32,7 +32,7 @@ const toolsIcons: IconImages  = {
 
 
 
-const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
+const ProjectCard = ({ data, openOverlay, projectIndex }: any) => {
     const proj: Project = data
     const ref = useRef<HTMLDivElement>(null)
 
@@ -89,7 +89,7 @@ const ProjectCard = ({ data, isShowCase, openOverlay }: any) => {
 
                 <button 
                     className={styles.btn}
-                    onClick={() => openOverlay(proj.id)}
+                    onClick={() => openOverlay(projectIndex)}
                 >   
                     Open
                 </button>

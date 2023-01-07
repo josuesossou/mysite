@@ -1,8 +1,8 @@
 import sharedStyles from '../../styles/shared.module.scss'
 import styles from './about.module.scss'
 
-const About = ({ aboutText } : any) => {
-    const text: string = aboutText
+const About = ({ data } : any) => {
+    const text: string = data
 
     return (
         <section id='about' className={styles.about}>

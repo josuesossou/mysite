@@ -134,60 +134,6 @@
                     "icon": "reactIcon"
                 }
             ]
-        },
-        {
-            "id": 5,
-            "title": "Countdown Timer",
-            "description": "hello",
-            "images": [
-                {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
-                    "details": ""
-                }
-            ],
-            "link": "",
-            "tools": [
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "title": "Countdown Timer",
-            "description": "hello",
-            "images": [
-                {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
-                    "details": ""
-                }
-            ],
-            "link": "",
-            "tools": [
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "title": "Countdown Timer",
-            "description": "hello",
-            "images": [
-                {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
-                    "details": ""
-                }
-            ],
-            "link": "",
-            "tools": [
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                }
-            ]
         }
     ],
     "skills": [

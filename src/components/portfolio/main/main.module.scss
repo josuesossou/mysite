@@ -1,7 +1,7 @@
 .header {
     min-height: 100vh;
     min-height: 100dvh;
-    background-color: #031229;
+    background: var(--radial-gradiant);
     display: grid;
     grid-auto-rows: auto;
     grid-template-rows: 2fr 1fr 1fr 1fr 2fr;
@@ -12,54 +12,20 @@
         'button2'
         'icons';
     align-items: center;
-    // flex-direction: column;
-    // align-items: stretch;
-    color: #ffffff;
+    color: var(--text-primary-color);
     position: relative;
-
-    // > * {
-    //     // flex-grow: 1;
-    // }
-
-    // > div:nth-child(2) {
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     opacity: 0;
-    //     gap: 1.7em;
-    //     animation: fadeIn 1s ease-in forwards;
-
 
         h1 {
             grid-area: title;
             margin: auto auto 0 auto;
             font-size: 2em;
-            // width: auto;
-            // display: inline-block;
             text-align: center;
-            // align-self: center;
         }
 
         h2 {
             grid-area: welcome;
             justify-self: center;
-           
-            // width: 100%;
-            // width: max-content;
-            // flex-shrink: 0;
-            // flex-grow: 0;
-            // min-width: 0;
-            // transform: scaleX(0);
-
         }
-        
-    // }
-    // > div:nth-child(3) {
-    //     grid-area: title;
-    //     // display: flex;
-    //     flex-direction: column;
-    //     opacity: 0;
-    //     animation: fadeIn 1s forwards 3s;
 
         a:nth-of-type(1) {
             justify-self: center;
@@ -74,12 +40,12 @@
 
         button {
             background-color: transparent;
-            color: white;
+            color: var(--text-primary-color);
             padding: 1em 3em;
             margin: 0;
             line-height: 0;
             font-size: 1.2em;
-            border: white 1px outset;
+            border: var(--text-primary-color) 1px outset;
             cursor: pointer;
 
         }
@@ -87,7 +53,7 @@
         button:active:hover {
             border: 2px inset;
         }
-    // }
+    
 
     > div:nth-of-type(2) {
         grid-area: icons;
@@ -129,7 +95,7 @@
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: white; }
+    50% { border-color: var(--text-primary-color); }
 }
 
 @media (min-width: 55em) {
@@ -142,7 +108,7 @@
 
         > a button {
             padding: 1.3em 2em;
-            font-size: 1.2em;
+            font-size: 1em;
             border-width: 2px;
         }
         
@@ -166,7 +132,7 @@
         }
 
         h1 {
-            // margin-top: auto;
+            
             animation: fadeIn 1s ease-in forwards;
             font-size: 3em;
         }
@@ -184,9 +150,4 @@
         }
      
     }
-
-    // @keyframes typing {
-    //     from { width: 0 }
-    //     to { width: 46% }
-    // }
 }

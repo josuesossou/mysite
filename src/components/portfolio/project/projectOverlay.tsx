@@ -1,34 +1,27 @@
 import { useEffect, useRef, useState } from 'react'
 import { Img, Project } from '../../../lib/types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import styles from './project.module.scss'
 
 const ProjectOverlay = ({ list, current, close }: any) => {
     const [showProject, setShowProject] = useState(false)
-    const [projIndex, setProjIndex] = useState<number>(current-1)
-    // const [slideshowPauseIndex, setPauseIndex] = useState<number>(-1)
-    // const sliderRef = useRef<HTMLDivElement>(null)
+    const [projIndex, setProjIndex] = useState<number>(current)
+    const body = document.querySelector("body")
     const projects: Project[] = list
-    // let imagesLength: number
-    // let currImgNodes: NodeListOf<Element> 
-    // let animationSubs: NodeJS.Timeout | undefined
-    // let playingBookFlipAnim: boolean
-
-    // const showProjectSlider = () => setShowProject(!showProject)
     const bodyClose = () => {
-        const body = document.querySelector("body")
         body ? body.style.overflow = 'auto' : null;
         close()
     }
 
+    const changeProject = (direction:number) => {
+        if (projIndex === 0 && direction === -1) return
+        if (projIndex === projects.length-1 && direction === 1) return
+        setProjIndex(projIndex + (1 * direction))
+    }
+
     useEffect(() => {
-        // window.scroll(() => { return false})
-        // const body = document.getElementsByName('body')
-        // console.log(body)
-        // body.style.overflow = 'hidden'
-        const body = document.querySelector("body")
         body ? body.style.overflow = 'hidden' : null;
     }, [])
 
@@ -43,11 +36,19 @@ const ProjectOverlay = ({ list, current, close }: any) => {
                 <h2>Current: {projIndex+1}</h2>
                 <h2>ProjId: {projects[projIndex+1].id}</h2>
                 <div className={styles.projControls}>
-                    <button>
-                        Projec: Previous
+                    <button onClick={() => changeProject(-1)}>
+                        <FontAwesomeIcon 
+                            icon={faArrowLeft} 
+                            size={"1x"} 
+                            color={'white'} />
+                        Previous
                     </button>
-                    <button>
+                    <button onClick={() => changeProject(1)}>
                         Project: Next
+                        <FontAwesomeIcon 
+                            icon={faArrowRight} 
+                            size={"1x"} 
+                            color={'white'} />
                     </button>
                 </div>
             </div>
@@ -61,6 +62,7 @@ const ProjectOverlay = ({ list, current, close }: any) => {
                         <iframe 
                             // width="560" 
                             // height="315" 
+                            loading='lazy'
                             src="https://www.youtube.com/embed/Qt52J0p82ZQ" 
                             title="YouTube video player" 
                             
@@ -75,6 +77,7 @@ const ProjectOverlay = ({ list, current, close }: any) => {
                         <Image
                             layout="fill"
                             objectFit="contain"
+                            loading='lazy'
                             width={600}
                             height={600}
                             src={'https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png'}  
