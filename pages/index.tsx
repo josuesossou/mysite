@@ -7,6 +7,7 @@ import Project from '../src/components/portfolio/project'
 import Skills from '../src/components/portfolio/skills'
 import About from '../src/components/portfolio/about'
 import Footer from '../src/components/footer'
+import Contact from '../src/components/portfolio/contact'
 
 const PortfolioPage: NextPage = ({ 
     about,
@@ -25,6 +26,7 @@ const PortfolioPage: NextPage = ({
         <About data={about} />
         <Project data={projects} />
         <Skills data={skills}/>
+        <Contact />
         <Footer />
         <NavLinks />
     </div>

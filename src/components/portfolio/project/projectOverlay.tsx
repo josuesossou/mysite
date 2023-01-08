@@ -1,90 +1,108 @@
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { Img, Project } from '../../../lib/types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import styles from './project.module.scss'
+import { ProjectContext } from '../../../lib/contexts'
+import { toolsIcons } from '../../../lib/imageIcons'
 
-const ProjectOverlay = ({ list, current, close }: any) => {
-    const [showProject, setShowProject] = useState(false)
-    const [projIndex, setProjIndex] = useState<number>(current)
+const ProjectOverlay = ({ updateProject, close }: any) => {
     const body = document.querySelector("body")
-    const projects: Project[] = list
+    const project: Project = useContext(ProjectContext)
+
+
+    const changeProject = (direction:number) => {
+        updateProject(project.id + direction)
+    }
+
     const bodyClose = () => {
         body ? body.style.overflow = 'auto' : null;
         close()
     }
-
-    const changeProject = (direction:number) => {
-        if (projIndex === 0 && direction === -1) return
-        if (projIndex === projects.length-1 && direction === 1) return
-        setProjIndex(projIndex + (1 * direction))
-    }
-
     useEffect(() => {
         body ? body.style.overflow = 'hidden' : null;
     }, [])
 
     /** Render Return */
     return (
-        <div className={styles.overlay}>
-            <button className={styles.closeBtn} onClick={bodyClose}  />
+        <div className={styles.overlayWrapper}>
+            <div className={styles.overlay}>
+                
+                {/* Left side of the overlay with white background which show the description of the project */}
+                <div>
+                    <h2>{project.title}</h2>
+                    <article>
+                        {project.description}
+                    </article>
 
-            {/* Left side of the overlay with white background which show the description of 
-            the project */}
-            <div>
-                <h2>Current: {projIndex+1}</h2>
-                <h2>ProjId: {projects[projIndex+1].id}</h2>
-                <div className={styles.projControls}>
-                    <button onClick={() => changeProject(-1)}>
-                        <FontAwesomeIcon 
-                            icon={faArrowLeft} 
-                            size={"1x"} 
-                            color={'white'} />
-                        Previous
-                    </button>
-                    <button onClick={() => changeProject(1)}>
-                        Project: Next
-                        <FontAwesomeIcon 
-                            icon={faArrowRight} 
-                            size={"1x"} 
-                            color={'white'} />
-                    </button>
+                    <div>
+                        {project.tools.map((tool, ind) => (
+                            <div key={ind} className={styles.tools}>
+                                <div>
+                                    <Image 
+                                        layout="fill"
+                                        objectFit="cover"
+                                        src={toolsIcons[tool.icon]}
+                                    />
+                                </div>
+                                <h4>{tool.name}</h4>
+                            </div>
+                        ))}
+                    </div>
+                    
+                </div>
+
+                {/* Right side of the overlay to show project imagesand code if applicable */}
+                <div>
+                    {true && (
+                        <div>
+                            <iframe 
+                                // width="560" 
+                                // height="315" 
+                                loading='lazy'
+                                src="https://www.youtube.com/embed/Qt52J0p82ZQ" 
+                                title="YouTube video player" 
+                                
+                                // frameBorder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowFullScreen></iframe>
+                        </div>
+                    )}
+
+                    {true && [1,2,3,4,5,].map(() => (
+                        <div>
+                            <Image
+                                layout="fill"
+                                objectFit="contain"
+                                loading='lazy'
+                                // width={100}
+                                // height={100}
+                                src={'https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png'}  
+                            />
+                        </div>
+                    ))}
                 </div>
             </div>
 
-            {/* Right side of the overlay to show project images
-             and code if applicable */}
-            <div>
-
-                {true && (
-                    <div>
-                        <iframe 
-                            // width="560" 
-                            // height="315" 
-                            loading='lazy'
-                            src="https://www.youtube.com/embed/Qt52J0p82ZQ" 
-                            title="YouTube video player" 
-                            
-                            // frameBorder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowFullScreen></iframe>
-                    </div>
-                )}
-
-                {true && [1,2,3,4,5,].map(() => (
-                    <div>
-                        <Image
-                            layout="fill"
-                            objectFit="contain"
-                            loading='lazy'
-                            width={600}
-                            height={600}
-                            src={'https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png'}  
-                        />
-                    </div>
-                ))}
+            <div className={styles.projControls}>
+                <button onClick={() => changeProject(-1)}>
+                    <FontAwesomeIcon 
+                        icon={faArrowLeft} 
+                        size={"1x"} 
+                        color={'white'} />
+                    Previous
+                </button>
+                <button onClick={() => changeProject(1)}>
+                    Project: Next
+                    <FontAwesomeIcon 
+                        icon={faArrowRight} 
+                        size={"1x"} 
+                        color={'white'} />
+                </button>
             </div>
+
+            <button className={styles.closeBtn} onClick={bodyClose}  />
         </div>
     )
 }

@@ -15,11 +15,11 @@
     padding: 0 2em;
 }
 
-
+// ======= Project card styles starts here =========================
 .pCard {
     opacity: 1;
     position: relative;
-    height: 20em;
+    min-height: 20em;
     background-color: var(--text-primary-color);
     display: grid;
     justify-items: center;
@@ -55,33 +55,43 @@
     z-index: 1;
     padding: 2em;
 
+    article {
+        max-width: 45ch;
+        min-height: 11ch;
+        max-height: 11ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     > div {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         margin: 1em auto;
-        max-width: auto;
         gap: 1em
     }
 
     .tools {
-
-        position: relative;
-        display: flex;
-        border-radius: 1em;
         border: 1px solid var(--secondary-color);
-        align-items: center;
-        gap: .2em;
-        padding: .3em .5em;
+    }
+}
 
-        > div {
-            position: relative;
-            width: 1.5em;
-            height: 1.5em;
-        }
-        h4 {
-            line-height: 0;
-            font-size: 1em;
-        }
+.tools {
+    position: relative;
+    display: flex;
+    border-radius: 1em;
+    align-items: center;
+    gap: .1em;
+    padding: .3em .8em;
+
+    > div {
+        position: relative;
+        width: 1.5ch;
+        height: 1.5ch;
+    }
+
+    h4 {
+        line-height: 0;
+        font-size: 1rem;
     }
 }
 
@@ -98,9 +108,22 @@
     left: 2em;
 }
 
+// =========== overlay related styles starts here ========================
+.overlayWrapper {
+    position: fixed;
+    margin: 0 auto;
+    max-width: 1644px;
+    z-index: 106;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 .overlay {
     display: grid;
     grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
     position: fixed;
     bottom: 0;
     top: 0;
@@ -108,70 +131,133 @@
     right: 0;
     padding: 0;
     margin: 0;
-    z-index: 102;
+    z-index: 104;
     clip-path: circle(0px at center center);
     animation: grow .6s ease-in-out forwards;
     background-color: rgba($color: #f5f5f5, $alpha: .4);
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(20px);
     overflow-y: auto;
-    
-    .closeBtn {
-        position: fixed;
-        top: .5em;
-        right: 1em;
-        cursor: pointer;
-        z-index: 1;
-        background-color: var(--primary-color);
-        width: 3em;
-        height: 3em;
-        border-radius: 1.5em;
-        display: grid;
-    }
-    
-    .closeBtn::before{
 
-        justify-self: center;
-        align-self: center;
-        content: "\00d7"; /* This will render the 'X' */
-        font-size: 2em;
-        line-height: 0;
-        color: var(--text-primary-color);
-    }
-
-    >div:nth-of-type(1) {
-
-        height: 90dvh;
+    // left-side project description wrapper
+    > div:nth-of-type(1) {
+        // min-height: 90dvh;
         position: relative;
+        padding: 2em;
         background-color: var(--text-primary-color);
-
         box-shadow: var(--box-shadow);
+
+        // tools parent wrapper, only affects the 
+        // tools wrapper in the overlay
+        > div:nth-of-type(1) {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: max-content;
+            margin: 1em 0;
+            gap: .5em
+        }
+
+        // overrides the .tools class in the overlay
+        .tools {
+            padding: .5em .9em;
+            gap: 0;
+            border: 1px solid var(--primary-color);
+        }
     } 
 
-    >div:nth-of-type(2) {
+    // right side with video or images of the project
+    > div:nth-of-type(2) {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1em;
-        padding: 2em;
+        padding: 5em 1em;
         position: relative;
         background-color: var(--primary-color);
 
         div {
             position: relative;
-            min-height: 50dvw;
+            display: grid;
+            grid-template-columns: 1fr;
+            // width: 100px;
+            // min-height: 50dvw;
 
             iframe {
                 width: 100%;
+                // max-width: auto;
                 aspect-ratio: 16 / 9;
                 border: 0;
-        
+            }
+
+
+            img, span {
+                position: relative !important;
+                height: auto !important;
+                // aspect-ratio: 16 / 9 !important;
+                // object-fit: contain;
+                // width: 100% !important;
+                
             }
         }
-    } 
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: .5em;
+    right: 1em;
+    cursor: pointer;
+    z-index: 1;
+    background-color: var(--primary-color);
+    width: 3em;
+    height: 3em;
+    border-radius: 1.5em;
+    border: 0;
+    display: grid;
+    z-index: 104;
+}
+
+.closeBtn::before{
+    justify-self: center;
+    align-self: center;
+    content: "\00d7"; /* This will render the 'X' */
+    font-size: 2em;
+    line-height: 0;
+    color: var(--text-primary-color);
+    z-index: 104;
+}
+
+.projControls {
+    position: absolute;
+    display: flex;
+    bottom: 2em;
+    left: 2em;
+    // background-color: red;
+    justify-content: flex-start;
+    z-index: 104;
+    gap: 2em;
+    font-size: 1em;
+    margin-top: 1em;
+
+    > button {
+        @include button-style(var(--secondary-color), .5em 1em);
+        color: var(--primary-color);
+        box-shadow: var(--box-shadow);
+
+        svg {
+            margin: 0 .5em;
+            color: var(--primary-color);
+        }
+        transition: background-color 400ms ease-in;
+    }
+
+    > button:hover {
+        background-color: var(--ascent-color);
+    }
 }
 
 
 @media (min-width: 55em) {
+
     .overlay {
         grid-template-columns: 1.5fr 1fr;
         grid-auto-flow: row;
@@ -179,41 +265,16 @@
         max-width: 1644px;
         margin: 0 auto;
 
-        .projControls {
-            position: absolute;
-            display: flex;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 100%;
-            width: 100%;
-            justify-content: space-between;
-            font-size: 1em;
-            margin-top: 1em;
-    
+        
 
-            > button {
-                @include button-style(var(--primary-color), .5em 1em);
-                color: var(--secondary-color);
-                box-shadow: var(--box-shadow);
-
-                svg {
-                    margin: 0 .5em;
-                }
-                transition: background-color 400ms ease-in;
-            }
-
-            > button:hover {
-                background-color: var(--ascent-color);
-            }
-        }
-
-        button {
-            border: 0;
-        }
+        // button {
+        //     border: 0;
+        // }
 
         >div:nth-of-type(1) {
-            height: auto;
-            margin: 5em;
+            min-height: auto;
+            margin: 5em 2em;
+            overflow-y: auto;
         }
 
         >div:nth-of-type(2) {
@@ -224,7 +285,6 @@
     
             gap: 2em;
             padding: 4em 0;
-    
 
             div {
                 width: 90%;
@@ -236,12 +296,6 @@
                 margin: 0 auto;
         
 
-                img, span {
-                    position: relative !important;
-                    height: auto !important;
-                    object-fit: contain;
-                    
-                }
             }
         }
 
@@ -264,8 +318,37 @@
         
         /* Handle on hover */
         >div:nth-of-type(2)::-webkit-scrollbar-thumb:hover {
-        background: var(--text-secondary-color);
+            background: var(--text-secondary-color);
         }
+    }
+
+    .projControls {
+        margin-left: 0em;
+        // position: absolute;
+        // display: flex;
+        // left: 50%;
+        // transform: translateX(-50%);
+        // top: 100%;
+        // width: 100%;
+        // justify-content: space-between;
+        // font-size: 1em;
+        // margin-top: 1em;
+
+
+        // > button {
+        //     @include button-style(var(--primary-color), .5em 1em);
+        //     color: var(--secondary-color);
+        //     box-shadow: var(--box-shadow);
+
+        //     svg {
+        //         margin: 0 .5em;
+        //     }
+        //     transition: background-color 400ms ease-in;
+        // }
+
+        // > button:hover {
+        //     background-color: var(--ascent-color);
+        // }
     }
 }
 

@@ -2,7 +2,7 @@ import styles from './nav.module.scss'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faProjectDiagram, faCode, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faProjectDiagram, faCode, faUser, faContactCard } from '@fortawesome/free-solid-svg-icons'
 // import { faUser } from '@fortawesome/free-regular-svg-icons'
 
 
@@ -44,6 +44,7 @@ const NavLinks = () => {
                 <li><Link href="/#about">About</Link></li>
                 <li><Link href="/#project">Projects</Link></li>
                 <li><Link href="/#skills">Skills</Link></li>
+                <li><Link href="/#contact">Contact</Link></li>
             </ul>
             <ul className={`${styles.navSmall} ${styles.nav}`}>
                 <li>
@@ -73,12 +74,15 @@ const NavLinks = () => {
 
                 <li>
                     <Link href="/#skills">
-                        
-                            <FontAwesomeIcon icon={faCode} size={"1x"} color={'white'} />
-                        
+                        <FontAwesomeIcon icon={faCode} size={"1x"} color={'white'} />
                     </Link>
                 </li>
 
+                <li>
+                    <Link href="/#skills">
+                        <FontAwesomeIcon icon={faContactCard} size={"1x"} color={'white'} />
+                    </Link>
+                </li>
             </ul>
         </nav>
     )

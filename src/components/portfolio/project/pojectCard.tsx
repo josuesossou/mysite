@@ -1,79 +1,28 @@
-import { Project } from "../../../lib/types"
-import { useEffect, useRef } from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { 
-    reactIcon,
-    angularIcon,
-    nodejsIcon,
-    javaIcon,
-    javascriptIcon,
-    flutterIcon,
-    mongoIcon,
-    pythonIcon
-} from '../../../../public/icons'
 import styles from './project.module.scss'
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
+import { toolsIcons } from "../../../lib/imageIcons"
+import { Project } from "../../../lib/types"
 
-type IconImages = {
-    [key: string]: StaticImageData
-}
-
-const toolsIcons: IconImages  = {
-    reactIcon: reactIcon,
-    angularIcon: angularIcon,
-    nodejsIcon: nodejsIcon,
-    javaIcon: javaIcon,
-    javascriptIcon: javascriptIcon,
-    flutterIcon: flutterIcon,
-    mongoIcon: mongoIcon,
-    pythonIcon: pythonIcon
-}
-
-
-
-const ProjectCard = ({ data, openOverlay, projectIndex }: any) => {
-    const proj: Project = data
-    const ref = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        // const checkNavPos = () => {
-        //     if (!ref || ! ref.current) return
-        //     const pageH = window.innerHeight + window.scrollY
-        //     const eleTop = ref.current.offsetTop + 150
-
-        //     if (pageH < eleTop) return 
-        //     ref.current.style.animationPlayState = 'running'
-        // }
-
-        // window.addEventListener('scroll', checkNavPos)
-        // checkNavPos()
-    }, [])
+const ProjectCard = ({ data, openOverlay }: any) => {
+    const project: Project = data
 
     return (
-        <div className={styles.pCard} ref={ref}>
-            {/* <div className={styles.icon}>
-                {isShowCase && <FontAwesomeIcon icon={faStar} size={"1x"} color={'gold'} />}
-            </div> */}
-
+        <div className={styles.pCard} >
             <div className={styles.cardImage}>
                 <Image 
                     loading="lazy"
                     layout="fill"
                     objectFit="contain"
-                    src={proj.images[0].img}   
+                    src={project.images[0].img}   
                 />
             </div>
             
             <div className={styles.projDesc}>
-                <h3>{proj.title}</h3>
-                {/* <div style={{ marginBottom: '1.5em' }}> */}
-                    {/* <b><small className={styles.small}>Description</small></b> */}
-                <article>{proj.description}</article>
-                {/* </div> */}
+                <h3>{project.title}</h3>
+                <article>{project.description}</article>
 
                 <div>
-                    {proj.tools.map((tool, ind) => (
+                    {project.tools.map((tool, ind) => (
                         <div key={ind} className={styles.tools}>
                             <div>
                                 <Image 
@@ -89,7 +38,7 @@ const ProjectCard = ({ data, openOverlay, projectIndex }: any) => {
 
                 <button 
                     className={styles.btn}
-                    onClick={() => openOverlay(projectIndex)}
+                    onClick={() => openOverlay(project.id)}
                 >   
                     Open
                 </button>

@@ -1,5 +1,6 @@
 import { Skill } from '../../../lib/types'
 import sharedStyles from '../../styles/shared.module.scss'
+import SkillCard from './skillCard'
 import styles from './skills.module.scss'
 
 const Skills = ({ data }: any) => {
@@ -7,11 +8,9 @@ const Skills = ({ data }: any) => {
 
     return (
         <div id='skills' className={styles.skills}>
-            {/* <div className={sharedStyles.wrapper} id={styles.skills}> */}
                 {skills.map((skill, ind) => (
-                    <div key={ind} className={styles.div}>hello</div>
+                    <SkillCard key={ind} data={skill} />
                 ))}
-            {/* </div> */}
         </div>
     )
 }

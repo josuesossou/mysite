@@ -3,7 +3,7 @@
         {
             "id": 0,
             "title": "Countdown Timer",
-            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?",
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?",
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
@@ -104,70 +104,40 @@
                 }
             ],
             "showcase": true
-        },
-        {
-            "id": 4,
-            "title": "Countdown Timer",
-            "description": "hello",
-            "images": [
-                {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
-                    "details": ""
-                }
-            ],
-            "link": "",
-            "tools": [
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                },
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                },
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                },
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                }
-            ]
         }
     ],
     "skills": [
         {
             "name": "Java Script",
-            "icon": ""
-        },
-        {
-            "name": "React",
-            "icon": ""
+            "icon": "javascriptIcon"
         },
         {
             "name": "Typescript",
-            "icon": ""
+            "icon": "angularIcon"
+        },
+        {
+            "name": "React",
+            "icon": "reactIcon"
         },
         {
             "name": "Flutter",
-            "icon": ""
+            "icon": "flutterIcon"
         },
         {
             "name": "NodeJS",
-            "icon": ""
+            "icon": "nodejsIcon"
         },
         {
             "name": "AWS",
-            "icon": ""
+            "icon": "javaIcon"
         },
         {
             "name": "MongoDB",
-            "icon": ""
+            "icon": "mongoIcon"
         },
         {
             "name": "Firebase",
-            "icon": ""
+            "icon": "pythonIcon"
         }
     ],
     "about": "I am an enthusiastic and energetic person with three years of experience in software development. I'm currently pursuing a BA degree in Computer Science and enrolling in a Mobile Web Specialist Nano degree Program at Udacity. I have a background in IT with an AA degree in Networking and Wireless Technologies. My day to day programming languages and tools I use are Angular 4/5, React Native, Redux, Firebase, NodeJS, Git, GitHub, and Bitbucket. I also have experience in JavaScript, MongoDB, REST APIs, jQuery, HTML5, CSS3, Android Development in Java, Swift, VueJs, and AWS S3. My most previous Job was working as an Office Manager Assistant at ASM (IT company). I enjoyed my responsibilities there. I worked on Photoshop, update WordPress Website, enter customer info into a Database, greet and welcome customers, and answer phone calls."

@@ -1,6 +1,7 @@
   
 .skills {
     display: grid;
+    position: relative;
     grid-template-columns: repeat(1, 1fr);
     margin: 10em 0;
     background-color: var(--primary-color);
@@ -9,11 +10,7 @@
     // flex-wrap: wrap;
     // margin: 5em 0;
 
-    .div {
-        // width: 25%;
-        height: 20em;
-        border: 1px solid #a0a5ba;
-    }
+
 }
 
 @media (min-width: 45em) {
@@ -25,5 +22,26 @@
 @media (min-width: 75em) {
     .skills{
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.sCard {
+    width: auto;
+    min-height: 20em;
+    border: 1px solid #a0a5ba;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .cardImage {
+        height: 50%;
+        position: relative;
+        margin: auto 0;
+    }
+
+    h3 {
+        margin: auto;
+        font-size: 2rem;
+        color: var(--secondary-color);
     }
 }
