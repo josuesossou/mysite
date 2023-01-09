@@ -1,5 +1,4 @@
 import { Skill } from '../../../lib/types'
-import sharedStyles from '../../styles/shared.module.scss'
 import SkillCard from './skillCard'
 import styles from './skills.module.scss'
 

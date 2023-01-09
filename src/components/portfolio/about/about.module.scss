@@ -1,8 +1,12 @@
 .about {
     display: flex;
-
+    padding: 5em 0;
+    
     article {
-        margin: 3em;
-        max-width: 45ch;
+        margin: 0 auto;
+        max-width: 50ch;
+        font-size: 1.3rem;
+        text-align: left;
+        word-spacing: 0ch;
     }
 }

@@ -25,7 +25,7 @@ const ProjectComp = ({ data }: any) => {
 
     return (
         <ProjectContext.Provider value={projectContext}>
-            <section id="project">
+            <section id="project" className={styles.project}>
                 <h2 className={sharedStyles.title}>Projects</h2>
 
                 <div className={styles.showcaseProj}>

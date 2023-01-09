@@ -1,12 +1,9 @@
-import sharedStyles from '../styles/shared.module.scss'
+import styles from './footer.module.scss'
 
 const Footer = () => {
     return (
-        <div id='footer' style={{ height: '10em', backgroundColor: '#031229'  }}>
-            <div className={sharedStyles.wrapper}>
-
-            </div>
-        </div>
+        <section id='footer' className={styles.footer}>
+        </section>
     )
 }
 

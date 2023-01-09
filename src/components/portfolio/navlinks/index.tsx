@@ -7,8 +7,6 @@ import { faHome, faProjectDiagram, faCode, faUser, faContactCard } from '@fortaw
 
 
 const footerObserve: IntersectionObserverCallback = (entries) => {
-    
-
     entries.forEach(entry => {
         const navEle = document.getElementById('navLarge')
 
@@ -25,17 +23,17 @@ const footerObserve: IntersectionObserverCallback = (entries) => {
 }
 
 const NavLinks = () => {
-    useEffect(() => {
-        let footerEle = document.getElementById('footer')
-        if (!footerEle) return
+    // useEffect(() => {
+    //     let footerEle = document.getElementById('footer')
+    //     if (!footerEle) return
 
-        const observer = new IntersectionObserver(
-            footerObserve, {
-                threshold: 0.3
-            }
-        )
-        observer.observe(footerEle)
-    }, [])
+    //     const observer = new IntersectionObserver(
+    //         footerObserve, {
+    //             threshold: 0.3
+    //         }
+    //     )
+    //     observer.observe(footerEle)
+    // }, [])
 
     return (
         <nav id='nav'>

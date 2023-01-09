@@ -1,8 +1,89 @@
-.about {
-    display: flex;
+@import '../../styles/shared.module.scss';
 
-    article {
-        margin: 3em;
-        max-width: 45ch;
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10em;
+    padding: 0 1em;
+    
+    div {
+        width: 100%;
+        max-width: 55ch;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        p {
+            text-align: center;
+            max-width: 30ch;
+        }
+
+        button {
+            @include button-style(var(--secondary-color), .5em 1em);
+            box-shadow: var(--box-shadow);
+            margin: 0 auto;
+            transition: all 1s ease-in;
+        }
+        button:hover {
+            box-shadow: 0 0 0 #fff;
+        }
+    }
+
+    form {
+        width: 100%;
+        max-width: 55ch;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5rem;
+            margin: .5em 0;
+        }
+        input, textarea {
+            margin: .5em 0;
+            border: 2px groove var(--primary-color);
+            padding: .5em 1em;
+            font-size: 1rem;
+            outline: 0;
+        }
+
+        input:focus, textarea:focus {
+            border: 3px solid var(--ascent-color);
+            // outline-color: 1px solid var(--primary-color);
+            // outline-radius: 0;
+        }
+
+        input {
+            min-height: 3em;
+        }
+
+        textarea {
+            min-height: 20ch;
+            min-width: 100%;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: var(--primary-color);
+            color: var(--text-primary-color);
+            cursor: pointer;
+        }
     }
 }
+
+
+// @media (min-width: 55em) {
+//     .contact {
+    
+//         form {
+//             // width:50%
+//             // m
+//             max-width: 55ch;
+//         }
+//     }
+// }
