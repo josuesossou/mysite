@@ -1,5 +1,5 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
-import { getData } from '../src/lib/portfolioHelpers'
+import getData from '../src/lib/getData'
 import Head from 'next/head'
 import Main from '../src/components/portfolio/main'
 import NavLinks from '../src/components/portfolio/navlinks'

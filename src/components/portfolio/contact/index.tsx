@@ -28,7 +28,9 @@ const Contact = () => {
             body: JSON.stringify({ name, email, organization, message })
         })
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(() => {
+            setIsSubmit(true)
+        })
     }
 
     const close = () => {
@@ -45,7 +47,7 @@ const Contact = () => {
                     Thank You For contacting me. I will review your message
                     and respond within 3 business days
                 </p>
-                <button>Close</button>
+                <button onClick={close}>Close</button>
             </div> :
             <form onSubmit={submitContact}>
                 <label>
@@ -64,6 +66,7 @@ const Contact = () => {
                     Message
                     <textarea required id='message' name='message'/>
                 </label>
+                <small>Powered by SendGrid</small>
                 <input type='submit' value='Send' />
             </form>}
         </section>

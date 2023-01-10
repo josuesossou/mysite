@@ -1,6 +1,8 @@
 import * as data from '../../data/portfolioData.json'
 import {Portfolio} from './types'
 
-export const getData = ():Portfolio => {
+const getData = ():Portfolio => {
     return data
 }
+
+export default getData

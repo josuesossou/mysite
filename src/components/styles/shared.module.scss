@@ -12,7 +12,7 @@
 }
 .title {
     font-size: 2rem;
-    margin: 2em auto;
+    margin: 0 auto;
     margin-bottom: 3em;
     width: max-content;
 
@@ -35,12 +35,14 @@
 }
 
 
-@mixin button-style($bg-color, $padding: 0, $margin: 0) {
+@mixin button-style($bg-color, $padding: 0, $margin: 0, $color: --primary-color) {
     border: 0;
     outline: 0;
-    border-radius: 20px;
+    border-radius: 3em;
     background-color: $bg-color;
     padding: $padding;
     margin: $margin;
+    color: $color;
+    transition: all .7s ease-in-out;
     cursor: pointer;
 }

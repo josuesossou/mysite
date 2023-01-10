@@ -6,13 +6,9 @@ const About = ({ data } : any) => {
 
     return (
         <section id='about' className={styles.about}>
-                {/* <div className={sharedStyles.wrapTitle}>
-                    <h2 className={sharedStyles.h2}>About</h2>
-                    <div className={sharedStyles.underlineTop}></div>
-                    <div className={sharedStyles.underlineBottom}></div>
-                </div> */}
-
             <article>
+                <p>My name is Josue Sossou</p>
+                <br />
                 {text}
             </article>
         </section>

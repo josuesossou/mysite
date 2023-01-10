@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
 import nodemailerSendgrid from 'nodemailer-sendgrid'
+import { getAutomatedEmailHTML, getSentEmailHTML } from '../../src/lib/helpers'
 
 type Success = {
     success: boolean,
@@ -25,31 +26,32 @@ const transport = nodemailer.createTransport(
 );
 
 const sendMailToMe = async ({name, email, organization, message}:MailInfo) => {
-    return transport.sendMail({
-        from: email,
-        to: myEmail,
-        cc: myCCEmail,
-        subject: `${name} with ${organization}`,
-        html: message
-    });
+    try {
+        return transport.sendMail({
+            from: myCCEmail,
+            to: `Josue Sossou ${myEmail}`,
+            subject: `${name} with ${organization}`,
+            html: getSentEmailHTML(message, email)
+        });
+    } catch (error) {
+        console.log("ERRROOR #########",error)
+        return Promise.reject('error')
+    }
 }
 
 const sendMail = async ({ name, email, organization, message}:MailInfo) => {
     try {
         await transport.sendMail({
-            from: myEmail,
-            to: email,
-            subject: 'Josue Sossou Portfolio -- Automated',
-            html: `<p>Hello, you have sent an email to Josue; 
-                    he will review it and respond back to you 
-                    within 3 business days</p>`
+            from: myCCEmail,
+            to: `${name} ${email}`,
+            subject: 'Automatic reply: josuesep.com',
+            html: getAutomatedEmailHTML(name)
         });
 
-        // await sendMailToMe({name, email, organization, message})
-    } catch (error) {
-        console.log('ERROR ##################', error)
-        const overrideMessage = message + '\n USER EMAIL: ILLEGITIMATE \n'
-        // await sendMailToMe({ name, email, organization, message: overrideMessage })
+        await sendMailToMe({ name, email, organization, message })
+        return Promise.resolve()
+    } catch (error:any) {
+        return Promise.reject('error')
     }
 }
 
@@ -63,14 +65,8 @@ export default function handler(
     }
 
     const { name, email, message, organization } = req.body
-    console.log({ name, email, message, organization })
-    console.log(SENDGRID_API_KEY, myCCEmail, myEmail)
 
     sendMail({name, email, organization, message })
-    .then(() => {
-        res.status(200).json({ success: true, code: 200 })
-    })
-    .catch(() => {
-        res.status(400).json({ success: false, code: 400 })
-    })
+    .catch(err => console.log(err))
+    res.status(200).json({ success: true, code: 200 })
 }
