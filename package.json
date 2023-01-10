@@ -17,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@types/nodemailer": "^6.4.7",
     "@types/nodemailer-sendgrid": "^1.0.0",
+    "deep-email-validator": "^0.1.21",
     "next": "12.1.6",
     "nodemailer": "^6.8.0",
     "nodemailer-sendgrid": "^1.0.3",

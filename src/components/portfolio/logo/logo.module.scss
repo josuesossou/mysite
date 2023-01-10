@@ -1,24 +1,75 @@
 .logo {
-    background-color: var(--ascent-color);
-    padding: 1.6em 1em ;
+
+    // padding: .8em .6em;
     position: absolute;
     top: 1em;
     left: 1em;
     cursor: pointer;
-    border-radius: 10em;
 
-    p {
-        font-size: 1.2rem;
+    > div {
+        display: flex;
+        padding: 1em;
+        align-items: center;
+        border-radius: 15em;
+        background-color: var(--ascent-color);
 
-        span:nth-of-type(1) {
-            font-size: 2rem;
-            line-height: 0;
+        > p:nth-of-type(1) {
+            font-size: 1rem;
             
         }
-        span:nth-of-type(2) {
-            font-size: 2rem;
-            line-height: 0;
-            margin-left: .4ch;
+        > p:nth-of-type(3) {
+            font-size: 1rem;
+            margin-left: .2em;
+        }
+        > p:nth-of-type(2) {
+            // font-size: 1rem;
+            white-space: nowrap;
+            width: 0;
+            overflow: hidden;
+            transition: width .5s steps(40, end);
+            // animation: grow2 1s steps(40, end) 5s forwards;
+            // display: none;
+            // transform: scale(0);
+        }
+        > p:nth-of-type(4) {
+            // font-size: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            transition: width .5s steps(40, end);
+            // height: 2em;
+            // animation: grow 1s steps(40, end) 5s forwards;
+            // display: none;
+            // transform: scale(0);
+        }
+    }
+
+    > div:hover {
+        > p:nth-of-type(4) {
+            width: 5ch;
+        }
+        > p:nth-of-type(2) {
+            width: 4ch;
+        }
+    }
+
+    @keyframes grow {
+        from {
+            width: 0;
+        }
+    
+        to {
+            width: 5ch;
+        }
+    }
+    @keyframes grow2 {
+        from {
+            width: 0;
+        }
+    
+        to {
+            width: 4ch;
         }
     }
 }
+

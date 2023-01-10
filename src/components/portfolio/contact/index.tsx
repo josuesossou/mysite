@@ -18,8 +18,6 @@ const Contact = () => {
         const organization = target.org.value
         const message = target.message.value
 
-        console.log(JSON.stringify({ name, email, organization, message }))
-
         fetch(`${location.protocol}//${location.host}/api/contact`, {
             method: 'POST',
             headers: {
@@ -28,8 +26,9 @@ const Contact = () => {
             body: JSON.stringify({ name, email, organization, message })
         })
         .then(res => res.json())
-        .then(() => {
-            setIsSubmit(true)
+        .then((res) => {
+            console.log(res)
+            if (res.success) setIsSubmit(true)
         })
     }
 

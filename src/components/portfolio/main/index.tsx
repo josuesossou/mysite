@@ -18,7 +18,7 @@ const Main = () => {
                     // aria-control='resumePopup'  
                 >Resume</button>
             </a>
-            <a href='#skills' aria-flowto='#skills'>
+            <a href='#contact' aria-flowto='#skills'>
                 <button>Contact</button>
             </a>
             <div>
