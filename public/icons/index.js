@@ -8,10 +8,10 @@ import python from './python.png'
 import react from './react.png'
 
 export const reactIcon = react
-export const pythonIcon = python
+export const firebaseIcon = python
 export const nodejsIcon = nodejs
 export const mongoIcon = mongo
 export const flutterIcon = flutter
 export const javascriptIcon = javascript
 export const angularIcon = angular
-export const javaIcon = java
+export const awsIcon = java

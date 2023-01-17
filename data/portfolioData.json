@@ -2,11 +2,79 @@
     "projects":  [
         {
             "id": 0,
+            "title": "Coffee Shop Rating",
+            "description": "",
+            "images": [
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop3.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop2.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop1.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop4.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop5.png",
+                    "details": ""
+                },                
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop7.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop6.png",
+                    "details": ""
+                }
+            ],
+            "link": "",
+            "tools": [
+                {
+                    "name": "JavaScript",
+                    "icon": "javascriptIcon"
+                },
+                {
+                    "name": "AWS",
+                    "icon": "awsIcon"
+                },
+                {
+                    "name": "NodeJS",
+                    "icon": "nodejsIcon"
+                }
+            ],
+            "showcase": true,
+            "video": "https://www.youtube.com/embed/q09mrXWnbGI"
+        },
+        {
+            "id": 1,
             "title": "Countdown Timer",
-            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?",
+            "description": "",
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt2.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt4.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt5.png",
                     "details": ""
                 }
             ],
@@ -15,28 +83,14 @@
                 {
                     "name": "React",
                     "icon": "reactIcon"
-                }
-            ],
-            "showcase": true
-        },
-        {
-            "id": 1,
-            "title": "Countdown Timer",
-            "description": "hello",
-            "images": [
+                },
                 {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
-                    "details": ""
+                    "name": "Firebase",
+                    "icon": "firebaseIcon"
                 }
             ],
-            "link": "",
-            "tools": [                    
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                }
-            ],
-            "showcase": true
+            "showcase": true,
+            "video": "https://www.youtube.com/embed/Qt52J0p82ZQ"
         },
 
         {
@@ -45,7 +99,7 @@
             "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?",
             "images": [
                 {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
                     "details": ""
                 }
             ],
@@ -76,7 +130,7 @@
             "description": "hello",
             "images": [
                 {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
                     "details": ""
                 }
             ],
@@ -129,7 +183,7 @@
         },
         {
             "name": "AWS",
-            "icon": "javaIcon"
+            "icon": "awsIcon"
         },
         {
             "name": "MongoDB",
@@ -137,7 +191,7 @@
         },
         {
             "name": "Firebase",
-            "icon": "pythonIcon"
+            "icon": "firebaseIcon"
         }
     ],
     "about": "I am a forward-thinking passionate software engineer with a bachelor's degree in Computer Science and 5 years of productive experience in dynamic environments. I have a strong working experience with JavaScript, NodeJS, React, AWS SDK, APIs, MongoDB, and MySQL. I am a proud team player with problem-solving skills, knowledgeable in data structures and algorithms, and focused on achieving project objectives with speed and accuracy."

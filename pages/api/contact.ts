@@ -23,8 +23,9 @@ const clientID = process.env.CLIENT_ID
 const clientSecret = process.env.CLIENT_SECRET
 
 const transport = nodemailer.createTransport({
-    service: 'Gmail',
+    host: "smtp.gmail.com",
     auth: {
+        type: "OAuth2",
         user: myEmail,
         clientId: clientID,
         clientSecret: clientSecret
@@ -46,7 +47,7 @@ const sendMailToMe = async ({name, email, organization, message}:MailInfo) => {
     }
 }
 
-const sendMail = async ({ name, email, organization, message}:MailInfo) => {
+const sendMail = async ({ name, email, organization, message }: MailInfo) => {
     try {
         await transport.sendMail({
             from: myEmail,

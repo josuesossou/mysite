@@ -55,13 +55,13 @@ const ProjectOverlay = ({ updateProject, close }: any) => {
 
                 {/* Right side of the overlay to show project imagesand code if applicable */}
                 <div>
-                    {true && (
+                    {project.video && (
                         <div>
                             <iframe 
                                 // width="560" 
                                 // height="315" 
                                 loading='lazy'
-                                src="https://www.youtube.com/embed/Qt52J0p82ZQ" 
+                                src={project.video} 
                                 title="YouTube video player" 
                                 
                                 // frameBorder="0" 
@@ -70,7 +70,7 @@ const ProjectOverlay = ({ updateProject, close }: any) => {
                         </div>
                     )}
 
-                    {true && [1,2,3,4,5,].map(() => (
+                    {project.images.map((image) => (
                         <div>
                             <Image
                                 layout="fill"
@@ -78,7 +78,7 @@ const ProjectOverlay = ({ updateProject, close }: any) => {
                                 loading='lazy'
                                 // width={100}
                                 // height={100}
-                                src={'https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png'}  
+                                src={image.img}  
                             />
                         </div>
                     ))}

@@ -3,20 +3,20 @@ import {
     reactIcon,
     angularIcon,
     nodejsIcon,
-    javaIcon,
+    awsIcon,
     javascriptIcon,
     flutterIcon,
     mongoIcon,
-    pythonIcon
+    firebaseIcon
 } from '../../public/icons'
 
 export const toolsIcons: IconImages  = {
     reactIcon,
     angularIcon,
     nodejsIcon,
-    javaIcon,
+    awsIcon,
     javascriptIcon,
     flutterIcon,
     mongoIcon,
-    pythonIcon
+    firebaseIcon
 }

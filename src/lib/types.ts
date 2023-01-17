@@ -8,7 +8,8 @@ export type Project = {
     images: Img[],
     link: string,
     tools: Skill[],
-    showcase?: boolean
+    showcase?: boolean,
+    video?: string
 }
 export type Skill = {
     name: string,
