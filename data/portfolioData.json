@@ -3,7 +3,12 @@
         {
             "id": 0,
             "title": "Coffee Shop Rating",
-            "description": "",
+            "description": [
+                "The project is a web application that allows users to share their experiences and opinions about coffee shops. Built using Node.js, JavaScript, HTML, CSS and AWS, the application is designed to show users who do not have experience in software development get a feel of what APIs are.",
+                "The application uses the Express library to handle user requests and the AWS SDK to interact with various services in the AWS cloud. Users are required to provide their IAM credentials and the region they want to use in order to initialize the AWS services. These services include a Lambda function, an SQS queue, a DynamoDB table and an S3 bucket. The application also uses the IAM SDK to create a role for the Lambda function.",
+                "Once the services are created, users can add coffee shops by filling a form which includes the name of the coffee shop, a rating, an image and a comment. This information is sent to the server which pushes it to the SQS queue, triggering the Lambda function which adds the information to the DynamoDB table.",
+                "The users can view all the coffee shops they added in the home page of the app. The application is designed to be easily scalable, allowing for an increase in the number of users and their interactions with the application. The application is also optimized for security, performance and maintainability. The application can be easily containerized and deployed on different environments."
+            ],
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop3.png",
@@ -34,7 +39,6 @@
                     "details": ""
                 }
             ],
-            "link": "",
             "tools": [
                 {
                     "name": "JavaScript",
@@ -50,12 +54,13 @@
                 }
             ],
             "showcase": true,
-            "video": "https://www.youtube.com/embed/q09mrXWnbGI"
+            "video": "https://www.youtube.com/embed/q09mrXWnbGI",
+            "source": "https://github.com/josuesossou/API_For_Coffee_Shops"
         },
         {
             "id": 1,
             "title": "Countdown Timer",
-            "description": "",
+            "description": [""],
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
@@ -78,7 +83,6 @@
                     "details": ""
                 }
             ],
-            "link": "",
             "tools": [
                 {
                     "name": "React",
@@ -90,20 +94,19 @@
                 }
             ],
             "showcase": true,
-            "video": "https://www.youtube.com/embed/Qt52J0p82ZQ"
-        },
-
-        {
+            "video": "https://www.youtube.com/embed/Qt52J0p82ZQ",
+            "source": "",
+            "live": ""
+        },{
             "id": 2,
             "title": "Countdown Timer",
-            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?",
+            "description": ["Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?"],
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
                     "details": ""
                 }
             ],
-            "link": "",
             "tools": [
                 {
                     "name": "React",
@@ -127,14 +130,13 @@
         {
             "id": 3,
             "title": "Countdown Timer",
-            "description": "hello",
+            "description": ["hello"],
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
                     "details": ""
                 }
             ],
-            "link": "",
             "tools": [
                 {
                     "name": "React",

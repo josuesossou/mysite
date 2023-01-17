@@ -19,7 +19,8 @@ const ProjectCard = ({ data, openOverlay }: any) => {
             
             <div className={styles.projDesc}>
                 <h3>{project.title}</h3>
-                <article>{project.description}</article>
+                <br></br>
+                <article>{project.description[0]}</article>
 
                 <div>
                     {project.tools.map((tool, ind) => (

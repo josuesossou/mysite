@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Img, Project } from '../../../lib/types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight, faAudioDescription } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import styles from './project.module.scss'
 import { ProjectContext } from '../../../lib/contexts'
@@ -32,8 +32,26 @@ const ProjectOverlay = ({ updateProject, close }: any) => {
                 {/* Left side of the overlay with white background which show the description of the project */}
                 <div>
                     <h2>{project.title}</h2>
+                    <div className={styles.links}>
+                        {project.source && <a href={project.source} target='_blank'>
+                            <button>
+                                Source Code
+                            </button>
+                        </a>}
+                        {project.live && <a href={project.live} target='_blank'>
+                            <button>
+                                View Live
+                            </button>
+                        </a>}
+                    </div>
+                    <br />
                     <article>
-                        {project.description}
+                        {project.description.map(desc => (
+                            <>
+                                <p>{desc}</p>
+                                <br />
+                            </>
+                        ))}
                     </article>
 
                     <div>
@@ -57,14 +75,10 @@ const ProjectOverlay = ({ updateProject, close }: any) => {
                 <div>
                     {project.video && (
                         <div>
-                            <iframe 
-                                // width="560" 
-                                // height="315" 
+                            <iframe
                                 loading='lazy'
                                 src={project.video} 
-                                title="YouTube video player" 
-                                
-                                // frameBorder="0" 
+                                title="YouTube video player"  
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 allowFullScreen></iframe>
                         </div>
@@ -76,8 +90,6 @@ const ProjectOverlay = ({ updateProject, close }: any) => {
                                 layout="fill"
                                 objectFit="contain"
                                 loading='lazy'
-                                // width={100}
-                                // height={100}
                                 src={image.img}  
                             />
                         </div>

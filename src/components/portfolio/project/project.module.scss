@@ -84,8 +84,10 @@
     display: flex;
     border-radius: 1em;
     align-items: center;
-    gap: .1em;
+    gap: 0.3em;
     padding: .3em .8em;
+    width: max-content;
+    cursor: default;
 
     > div {
         position: relative;
@@ -145,7 +147,6 @@
 
     // left-side project description wrapper
     > div:nth-of-type(1) {
-        // min-height: 90dvh;
         position: relative;
         padding: 2em;
         background-color: var(--text-primary-color);
@@ -160,11 +161,23 @@
             margin: 1em 0;
             gap: .5em
         }
-
+        button {
+            @include button-style(var(--secondary-color), .5em 1em);
+            box-shadow: var(--box-shadow-small);
+            font-size: medium;
+            font-weight: lighter;
+            transition: all .5s;
+        }
+        article {
+            font-size: 1.3rem;
+        }
+        button:hover {
+            box-shadow: 0 0 0 rgb(0,0,0);
+        }
         // overrides the .tools class in the overlay
         .tools {
             padding: .5em .9em;
-            gap: 0;
+            margin-bottom: .5em;
             border: 1px solid var(--primary-color);
         }
     } 
@@ -192,14 +205,12 @@
                 border: 0;
             }
 
-
             img, span {
                 position: relative !important;
                 height: auto !important;
                 // aspect-ratio: 16 / 9 !important;
                 // object-fit: contain;
                 // width: 100% !important;
-                
             }
         }
     }

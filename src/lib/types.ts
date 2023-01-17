@@ -4,12 +4,13 @@ import { ReactNode } from "react"
 export type Project = {
     id: number,
     title: string,
-    description: string,
+    description: string[],
     images: Img[],
-    link: string,
     tools: Skill[],
     showcase?: boolean,
-    video?: string
+    video?: string,
+    source?: string,
+    live?: string
 }
 export type Skill = {
     name: string,
