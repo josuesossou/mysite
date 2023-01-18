@@ -2,7 +2,7 @@ import styles from './nav.module.scss'
 import Link from 'next/link'
 // import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faProjectDiagram, faCode, faUser, faContactCard, faHamburger } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faProjectDiagram, faCode, faUser, faContactCard, faBars } from '@fortawesome/free-solid-svg-icons'
 // import { faUser } from '@fortawesome/free-regular-svg-icons'
 
 
@@ -23,6 +23,12 @@ import { faHome, faProjectDiagram, faCode, faUser, faContactCard, faHamburger } 
 // }
 
 const NavLinks = () => {
+
+    const menuControl = () => {
+        const navSmall = document.querySelector(`.${styles.navSmall}`)
+        if (navSmall) navSmall.classList.toggle(styles.navSmallActive) 
+    }
+
     return (
         <nav id='nav'>
             <ul className={`${styles.navLarge} ${styles.nav}`} id='navLarge'>
@@ -34,8 +40,8 @@ const NavLinks = () => {
             </ul>
             <ul className={`${styles.navSmall} ${styles.nav}`}>
                 <li>
-                    <button className={styles.closeBtn}>
-                        <FontAwesomeIcon icon={faHamburger} size={"1x"} color={'white'} />
+                    <button onClick={menuControl} >
+                        <FontAwesomeIcon icon={faBars} size={"1x"}  />
                     </button>
                 </li>
                 <li>
