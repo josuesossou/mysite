@@ -7,8 +7,9 @@
   --ascent-color: #06224C;
   --text-primary-color: #f5f5f5;
   --text-secondary-color: #D6D6D6;
+  --inset-bg-color: #031229;
   
-  --radial-gradiant: radial-gradient(#06224C 0.1%, 19%,  #031229) no-repeat fixed;
+  --radial-gradiant: radial-gradient(#06224C 0.1%, 10%,  #031229) no-repeat fixed;
 
   /* shadow  */
   --box-shadow: 0 10px 19px -10px #0312296f;

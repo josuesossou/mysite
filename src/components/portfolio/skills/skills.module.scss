@@ -5,6 +5,8 @@
     grid-template-columns: repeat(1, 1fr);
     margin: 10em 0;
     background-color: var(--primary-color);
+    box-shadow: 0 0 0 100vmax var(--primary-color);
+    clip-path: inset(0 -100vmax);
 }
 
 @media (min-width: 45em) {

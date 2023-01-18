@@ -4,6 +4,8 @@
     min-height: 100vh;
     min-height: 100dvh;
     background: var(--radial-gradiant);
+    box-shadow: 0 0 0 100vmax var(--inset-bg-color);
+    clip-path: inset(0 -100vmax);
     display: grid;
     grid-auto-rows: auto;
     grid-template-rows: 2fr 1fr 1fr 1fr 2fr;
@@ -78,7 +80,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: var(--primary-color);
     display: flex;
 
     embed {
