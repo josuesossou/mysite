@@ -40,7 +40,7 @@ const ProjectComp = ({ data }: any) => {
 
                 {showOverlay && <ProjectOverlay 
                     updateProject={updateProject}
-                    projLength={projects.length}
+                    projectLength={projects.length}
                     close={() => setOverlay(false)} 
                 />}
             </section>

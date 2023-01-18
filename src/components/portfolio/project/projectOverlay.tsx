@@ -7,7 +7,7 @@ import styles from './project.module.scss'
 import { ProjectContext } from '../../../lib/contexts'
 import { toolsIcons } from '../../../lib/imageIcons'
 
-const ProjectOverlay = ({ updateProject, close }: any) => {
+const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
     const body = document.querySelector("body")
     const project: Project = useContext(ProjectContext)
 
@@ -101,20 +101,20 @@ const ProjectOverlay = ({ updateProject, close }: any) => {
             </div>
 
             <div className={styles.projControls}>
-                <button onClick={() => changeProject(-1)}>
+                {project.id > 0 && <button onClick={() => changeProject(-1)}>
                     <FontAwesomeIcon 
                         icon={faArrowLeft} 
                         size={"1x"} 
                         color={'white'} />
                     Previous
-                </button>
-                <button onClick={() => changeProject(1)}>
+                </button>}
+                {project.id < projectLength-1 && <button onClick={() => changeProject(1)}>
                     Project: Next
                     <FontAwesomeIcon 
                         icon={faArrowRight} 
                         size={"1x"} 
                         color={'white'} />
-                </button>
+                </button>}
             </div>
 
             <button className={styles.closeBtn} onClick={bodyClose}  />

@@ -19,13 +19,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
-  font-family: 'Nanum Gothic Coding', 'Arial Narrow', Arial, sans-serif;
 }
 body {
   max-width: 1644px;
   margin: 0 auto;
   position: relative;
+  scroll-behavior: smooth !important;
 }
 p,h1,h2,h3,h4, button {
   margin: 0;
