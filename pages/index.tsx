@@ -25,13 +25,14 @@ const PortfolioPage: NextPage = ({
                 <link rel="icon" href="/portfolioLogo.png" />
             </Head>
 
-            <NavLinks />
+
             <Main />
             <About data={about} />
             <Project data={projects} />
             <Skills data={skills}/>
             <Contact />
             <Footer />
+            <NavLinks />
         </div>
     )
 }
