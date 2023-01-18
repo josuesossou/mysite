@@ -63,7 +63,6 @@ const Contact = () => {
                     Message
                     <textarea required id='message' name='message'/>
                 </label>
-                <small>Powered by SendGrid</small>
                 <input type='submit' value='Send' />
             </form>}
         </section>
