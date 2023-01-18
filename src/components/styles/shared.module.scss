@@ -34,6 +34,17 @@
     top: .3em
 }
 
+@mixin closeBtn-style ($bg-color:var(--primary-color)) {
+    position: absolute;
+    cursor: pointer;
+    background-color: $bg-color;
+    width: 3em;
+    height: 3em;
+    border-radius: 1.5em;
+    border: 0;
+    display: grid;
+}
+
 
 @mixin button-style($bg-color, $padding: 0, $margin: 0, $color: --primary-color) {
     border: 0;

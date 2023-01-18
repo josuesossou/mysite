@@ -1,3 +1,5 @@
+@import '../../styles/shared.module.scss';
+
 .header {
     min-height: 100vh;
     min-height: 100dvh;
@@ -67,9 +69,38 @@
             margin-bottom: auto;
         }
     }
+}
 
+.pdfOverlay {
+    position: fixed;
+    z-index: 102;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    display: flex;
 
+    embed {
+        margin: 0 auto;
+    }
 
+    .closeBtn {
+        @include closeBtn-style();
+        bottom: 1em;
+        right: 1em;
+        padding: 0;
+        box-shadow: var(--box-shadow);
+    }
+    .closeBtn::before{
+        justify-self: center;
+        align-self: center;
+        content: "\00d7"; /* This will render the 'X' */
+        font-size: 2em;
+        line-height: 0;
+        color: var(--text-primary-color);
+    }
+    
 }
 
 @keyframes fadeIn {

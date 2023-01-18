@@ -1,9 +1,17 @@
 import Logo from '../logo'
 import styles from  './main.module.scss'
+import PdfOverlay from './pdfOverlay'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { useState } from 'react'
 
 const Main = () => {
+    const [isResume, showResume] = useState(false)
+
+    const openResume = () => {
+        showResume(true)
+    }
+
     return (
         <header className={styles.header} id="home">
             <Logo />
@@ -13,7 +21,7 @@ const Main = () => {
             </h2>
 
             <a>
-                <button>Resume</button>
+                <button onClick={openResume}>Resume</button>
             </a>
             <a href='#contact' aria-flowto='#skills'>
                 <button>Contact</button>
@@ -26,6 +34,8 @@ const Main = () => {
                     <FontAwesomeIcon icon={faGithub} size={"2x"} color={'white'} />
                 </a>
             </div>
+
+            {isResume && <PdfOverlay showResume={showResume} />}
         </header>
     )
 }

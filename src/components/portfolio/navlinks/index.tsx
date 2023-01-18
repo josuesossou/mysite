@@ -1,40 +1,28 @@
 import styles from './nav.module.scss'
 import Link from 'next/link'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faProjectDiagram, faCode, faUser, faContactCard } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faProjectDiagram, faCode, faUser, faContactCard, faHamburger } from '@fortawesome/free-solid-svg-icons'
 // import { faUser } from '@fortawesome/free-regular-svg-icons'
 
 
-const footerObserve: IntersectionObserverCallback = (entries) => {
-    entries.forEach(entry => {
-        const navEle = document.getElementById('navLarge')
+// const footerObserve: IntersectionObserverCallback = (entries) => {
+//     entries.forEach(entry => {
+//         const navEle = document.getElementById('navLarge')
 
-        if (!navEle) return
+//         if (!navEle) return
 
-        const footerHeight = entry.target.scrollHeight
-        if (entry.isIntersecting) {
-            console.log(footerHeight * 0.0625)
-            navEle.style.bottom = (footerHeight * 0.0625) + 1 + 'em' || '0px'
-        } else {
-            navEle.style.bottom = '1em'
-        }
-    })
-}
+//         const footerHeight = entry.target.scrollHeight
+//         if (entry.isIntersecting) {
+//             console.log(footerHeight * 0.0625)
+//             navEle.style.bottom = (footerHeight * 0.0625) + 1 + 'em' || '0px'
+//         } else {
+//             navEle.style.bottom = '1em'
+//         }
+//     })
+// }
 
 const NavLinks = () => {
-    // useEffect(() => {
-    //     let footerEle = document.getElementById('footer')
-    //     if (!footerEle) return
-
-    //     const observer = new IntersectionObserver(
-    //         footerObserve, {
-    //             threshold: 0.3
-    //         }
-    //     )
-    //     observer.observe(footerEle)
-    // }, [])
-
     return (
         <nav id='nav'>
             <ul className={`${styles.navLarge} ${styles.nav}`} id='navLarge'>
@@ -46,27 +34,23 @@ const NavLinks = () => {
             </ul>
             <ul className={`${styles.navSmall} ${styles.nav}`}>
                 <li>
-                    <button>X</button>
+                    <button className={styles.closeBtn}>
+                        <FontAwesomeIcon icon={faHamburger} size={"1x"} color={'white'} />
+                    </button>
                 </li>
                 <li>
                     <Link href="/#home">
-                        
-                            <FontAwesomeIcon icon={faHome} size={"1x"} color={'white'} />
-                        
+                        <FontAwesomeIcon icon={faHome} size={"1x"} color={'white'} />
                     </Link>
                 </li>
                 <li>
                     <Link href="/#about">
-                        
-                            <FontAwesomeIcon icon={faUser} size={"1x"} color={'white'} />
-                        
+                        <FontAwesomeIcon icon={faUser} size={"1x"} color={'white'} />
                     </Link>
                 </li>
                 <li>
                     <Link href="/#project">
-                        
-                            <FontAwesomeIcon icon={faProjectDiagram} size={"1x"} color={'white'} />
-                        
+                        <FontAwesomeIcon icon={faProjectDiagram} size={"1x"} color={'white'} />
                     </Link>
                 </li>
 
@@ -102,3 +86,14 @@ export default NavLinks
 // }
 
 // window.addEventListener('scroll', checkNavPos)
+    // useEffect(() => {
+    //     let footerEle = document.getElementById('footer')
+    //     if (!footerEle) return
+
+    //     const observer = new IntersectionObserver(
+    //         footerObserve, {
+    //             threshold: 0.3
+    //         }
+    //     )
+    //     observer.observe(footerEle)
+    // }, [])

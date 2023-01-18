@@ -1,16 +1,15 @@
-import { useContext, useEffect, useRef, useState } from 'react'
-import { Img, Project } from '../../../lib/types'
+import { useContext, useEffect } from 'react'
+import { Project } from '../../../lib/types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight, faAudioDescription } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import styles from './project.module.scss'
 import { ProjectContext } from '../../../lib/contexts'
 import { toolsIcons } from '../../../lib/imageIcons'
 
 const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
-    const bodyElement = document.querySelector("body")
+    let bodyElement:HTMLBodyElement|null = null
     const project: Project = useContext(ProjectContext)
-
 
     const changeProject = (direction:number) => {
         updateProject(project.id + direction)
@@ -20,7 +19,9 @@ const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
         bodyElement ? bodyElement.style.overflow = 'auto' : null;
         close()
     }
+    
     useEffect(() => {
+        bodyElement = document.querySelector("body") || null
         bodyElement ? bodyElement.style.overflow = 'hidden' : null;
     }, [bodyElement])
 

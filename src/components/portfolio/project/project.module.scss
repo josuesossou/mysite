@@ -8,9 +8,6 @@
 
 .project {
     margin: 5em 0;
-    // font-weight: 700;
-    // font-style: normal;
-    // font-display: ;
     font-stretch: extra-expanded;
 }
 
@@ -223,17 +220,9 @@
 }
 
 .closeBtn {
-    position: absolute;
+    @include closeBtn-style();
     top: .5em;
     right: 1em;
-    cursor: pointer;
-    z-index: 1;
-    background-color: var(--primary-color);
-    width: 3em;
-    height: 3em;
-    border-radius: 1.5em;
-    border: 0;
-    display: grid;
     z-index: 104;
 }
 
