@@ -1,6 +1,5 @@
-import validate from 'deep-email-validator'
 import nodemailer from 'nodemailer'
-import nodemailerSendgrid from 'nodemailer-sendgrid'
+import { google } from 'googleapis'
 import { getAutomatedEmailHTML, getSentEmailHTML } from '../../src/lib/helpers'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
@@ -15,28 +14,39 @@ type MailInfo = {
     message: string
 }
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY || ''
 const myEmail = process.env.MY_EMAIL
-const myCCEmail = process.env.MY_CC_EMAIL
-const myEmailPass = process.env.MY_EMAIL_PASS
 const clientID = process.env.CLIENT_ID
 const clientSecret = process.env.CLIENT_SECRET
+const refresh_token = process.env.REFRESH_TOKEN
+
+const OAuth2 = google.auth.OAuth2
+
+const oauth2Client = new OAuth2(
+    clientID,
+    clientSecret,
+)
+oauth2Client.setCredentials({
+    refresh_token
+})
 
 const transport = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    service: 'gmail',
     auth: {
         type: "OAuth2",
         user: myEmail,
         clientId: clientID,
-        clientSecret: clientSecret
-        // pass: myEmailPass
+        clientSecret: clientSecret,
+        refreshToken: refresh_token,
+    },
+    tls: {
+        rejectUnauthorized: false
     }
 });
 
 const sendMailToMe = async ({name, email, organization, message}:MailInfo) => {
     try {
         return transport.sendMail({
-            from: myCCEmail,
+            from: myEmail,
             to: `Josue Sossou ${myEmail}`,
             subject: `${name} with ${organization}`,
             html: getSentEmailHTML(message, email)
@@ -56,22 +66,11 @@ const sendMail = async ({ name, email, organization, message }: MailInfo) => {
             html: getAutomatedEmailHTML(name)
         });
 
-        // await sendMailToMe({ name, email, organization, message })
+        await sendMailToMe({ name, email, organization, message })
         return Promise.resolve()
     } catch (error:any) {
         console.log(error)
-        return Promise.resolve()
-    }
-}
-
-const checkEmailValidation = async (email: string) => {
-    try {
-        const emailCheck = await validate(email)
-        console.log('EMAIL CHECKED****', emailCheck)
-        return Promise.resolve()
-    } catch (error:any) {
-        console.log(error)
-        throw new Error(error)
+        return Promise.reject()
     }
 }
 
@@ -93,3 +92,16 @@ export default async function handler(
     }
 
 }
+
+
+// const checkEmailValidation = async (email: string) => {
+//     try {
+//         const emailCheck = await validate(email)
+//         console.log('EMAIL CHECKED****', emailCheck)
+//         return Promise.resolve()
+//     } catch (error:any) {
+//         console.log(error)
+//         throw new Error(error)
+//     }
+// }
+    // 

@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-
-
 const Contact = () => {
     const [isSubmit, setIsSubmit] = useState<boolean>(false)
 

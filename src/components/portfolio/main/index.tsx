@@ -13,19 +13,16 @@ const Main = () => {
             </h2>
 
             <a>
-                <button 
-                    aria-modal={true} 
-                    // aria-control='resumePopup'  
-                >Resume</button>
+                <button>Resume</button>
             </a>
             <a href='#contact' aria-flowto='#skills'>
                 <button>Contact</button>
             </a>
             <div>
-                <a href='https://www.linkedin.com/in/josue-sossou' target='_blank'>
+                <a href='https://www.linkedin.com/in/josue-sossou' target='_blank' rel="noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} size={"2x"} color={'white'} />
                 </a>
-                <a href='https://github.com/josuesossou' target='_blank'>
+                <a href='https://github.com/josuesossou' target='_blank' rel="noreferrer">
                     <FontAwesomeIcon icon={faGithub} size={"2x"} color={'white'} />
                 </a>
             </div>

@@ -8,7 +8,7 @@ import { ProjectContext } from '../../../lib/contexts'
 import { toolsIcons } from '../../../lib/imageIcons'
 
 const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
-    const body = document.querySelector("body")
+    const bodyElement = document.querySelector("body")
     const project: Project = useContext(ProjectContext)
 
 
@@ -17,12 +17,12 @@ const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
     }
 
     const bodyClose = () => {
-        body ? body.style.overflow = 'auto' : null;
+        bodyElement ? bodyElement.style.overflow = 'auto' : null;
         close()
     }
     useEffect(() => {
-        body ? body.style.overflow = 'hidden' : null;
-    }, [])
+        bodyElement ? bodyElement.style.overflow = 'hidden' : null;
+    }, [bodyElement])
 
     /** Render Return */
     return (
@@ -33,12 +33,12 @@ const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
                 <div>
                     <h2>{project.title}</h2>
                     <span className={styles.links}>
-                        {project.source && <span><a href={project.source} target='_blank'>
+                        {project.source && <span><a href={project.source} target='_blank' rel="noreferrer">
                             <button>
                                 Source Code
                             </button>
                         </a></span>}
-                        {project.live && <span><a href={project.live} target='_blank'>
+                        {project.live && <span><a href={project.live} target='_blank' rel="noreferrer">
                             <button>
                                 View Live
                             </button>
@@ -46,17 +46,17 @@ const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
                     </span>
                     <br />
                     <article>
-                        {project.description.map(desc => (
-                            <>
+                        {project.description.map((desc, index) => (
+                            <div key={desc.substring(0,10)}>
                                 <p>{desc}</p>
                                 <br />
-                            </>
+                            </div>
                         ))}
                     </article>
 
                     <div>
                         {project.tools.map((tool, ind) => (
-                            <div key={ind} className={styles.tools}>
+                            <div key={tool.name} className={styles.tools}>
                                 <div>
                                     <Image 
                                         alt={`${tool.name} logo`}
@@ -86,7 +86,7 @@ const ProjectOverlay = ({ updateProject, close, projectLength }: any) => {
                     )}
 
                     {project.images.map((image) => (
-                        <div>
+                        <div key={image.details}>
                             <Image
                                 alt='projectimages'
                                 fill={true}

@@ -1,12 +1,11 @@
-import { useContext, createContext } from "react";
-import { ChildrenProp, Project } from "./types";
+import { createContext } from "react";
+import { Project } from "./types";
 
 export const projectContextDefaultValues: Project = {
     id: -1,
     title: '',
-    description: '',
+    description: [],
     images: [],
-    link: '',
     tools: [],
 }
 

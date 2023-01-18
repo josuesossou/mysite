@@ -12,31 +12,31 @@
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop3.png",
-                    "details": ""
+                    "details": "coffeeshop3"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop2.png",
-                    "details": ""
+                    "details": "coffeeshop2"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop1.png",
-                    "details": ""
+                    "details": "coffeeshop1"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop4.png",
-                    "details": ""
+                    "details": "coffeeshop4"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop5.png",
-                    "details": ""
+                    "details": "coffeeshop5"
                 },                
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop7.png",
-                    "details": ""
+                    "details": "coffeeshop7"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/coffeeshopapp/coffeeshop6.png",
-                    "details": ""
+                    "details": "coffeeshop6"
                 }
             ],
             "tools": [
@@ -68,23 +68,23 @@
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
-                    "details": ""
+                    "details": "cdt1"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt2.png",
-                    "details": ""
+                    "details": "cdt2"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
-                    "details": ""
+                    "details": "cdt3"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt4.png",
-                    "details": ""
+                    "details": "cdt4"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt5.png",
-                    "details": ""
+                    "details": "cdt5"
                 }
             ],
             "tools": [
@@ -113,35 +113,35 @@
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw1.png",
-                    "details": ""
+                    "details": "pw1"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw2.png",
-                    "details": ""
+                    "details": "pw2"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw3.png",
-                    "details": ""
+                    "details": "pw3"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw4.png",
-                    "details": ""
+                    "details": "pw4"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw6.png",
-                    "details": ""
+                    "details": "pw6"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw7.png",
-                    "details": ""
+                    "details": "pw7"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw8.png",
-                    "details": ""
+                    "details": "pw8"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw9.png",
-                    "details": ""
+                    "details": "pw9"
                 }
             ],
             "tools": [
@@ -166,15 +166,15 @@
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/portfolio/portfolio1.png",
-                    "details": ""
+                    "details": "portfolio1"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/portfolio/portfolio2.png",
-                    "details": ""
+                    "details": "portfolio2"
                 },
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/portfolio/portfolio3.png",
-                    "details": ""
+                    "details": "portfolio3"
                 }
             ],
             "tools": [
