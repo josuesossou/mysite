@@ -20,8 +20,8 @@
 .navSmall {
     display: flex;
     flex-direction: column-reverse;
-    bottom: 3em;
-    right: 2em;
+    bottom: .5em;
+    right: .5em;
     overflow: hidden;
     height: 4em;
     width: 4em;
@@ -33,6 +33,13 @@
         flex-shrink: 0;
         flex-grow: 1;
         font-size: 2em;
+        padding: 0;
+    }
+
+    button, li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
 }

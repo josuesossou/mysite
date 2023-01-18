@@ -51,7 +51,6 @@
             font-size: 1.2em;
             border: var(--text-primary-color) 1px outset;
             cursor: pointer;
-
         }
         
         button:active:hover {
@@ -74,26 +73,30 @@
 }
 
 .pdfOverlay {
+    display: grid;
     position: fixed;
-    z-index: 102;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: var(--primary-color);
-    display: flex;
+    z-index: 110;
+
 
     embed {
         margin: 0 auto;
+        z-index: 110;
     }
 
     .closeBtn {
         @include closeBtn-style();
-        bottom: 1em;
-        right: 1em;
+        bottom: .5em;
+        right: .5em;
         padding: 0;
         box-shadow: var(--box-shadow);
+        z-index: 115;
     }
+
     .closeBtn::before{
         justify-self: center;
         align-self: center;

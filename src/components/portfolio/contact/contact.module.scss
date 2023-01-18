@@ -78,22 +78,19 @@
             @include button-style(var(--secondary-color));
             font-weight: bold;
             box-shadow: var(--box-shadow);
-        }
-
-        input[type=submit]:hover {
-            box-shadow: 0 0 0 #fff;
+            color: var(--primary-color);
         }
     }
 }
 
 
-// @media (min-width: 55em) {
-//     .contact {
+@media (min-width: 55em) {
+    .contact {
     
-//         form {
-//             // width:50%
-//             // m
-//             max-width: 55ch;
-//         }
-//     }
-// }
+        form {
+            input[type=submit]:hover {
+                box-shadow: 0 0 0 #fff;
+            }
+        }
+    }
+}
