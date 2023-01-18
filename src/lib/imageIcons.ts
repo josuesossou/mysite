@@ -7,7 +7,13 @@ import {
     javascriptIcon,
     flutterIcon,
     mongoIcon,
-    firebaseIcon
+    firebaseIcon,
+    amplifyIcon,
+    typescriptIcon,
+    nextjsIcon,
+    javaIcon,
+    sassIcon,
+    pythonIcon
 } from '../../public/icons'
 
 export const toolsIcons: IconImages  = {
@@ -18,5 +24,11 @@ export const toolsIcons: IconImages  = {
     javascriptIcon,
     flutterIcon,
     mongoIcon,
-    firebaseIcon
+    firebaseIcon,
+    amplifyIcon,
+    typescriptIcon,
+    nextjsIcon,
+    javaIcon,
+    sassIcon,
+    pythonIcon
 }

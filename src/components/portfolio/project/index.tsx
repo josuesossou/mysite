@@ -40,6 +40,7 @@ const ProjectComp = ({ data }: any) => {
 
                 {showOverlay && <ProjectOverlay 
                     updateProject={updateProject}
+                    projLength={projects.length}
                     close={() => setOverlay(false)} 
                 />}
             </section>
@@ -48,17 +49,3 @@ const ProjectComp = ({ data }: any) => {
 }
 
 export default ProjectComp
-
-// {/* <div id={styles.collapseProj}>
-//     {collapseData.map((proj, ind) => !proj.showcase && (
-//        <ProjectCard 
-//             key={ind}
-//             data={proj} 
-//             openOverlay={onViewClicked}
-//         />
-//     ))}
-// </div> */}
-
-// {/* <button 
-//     id={styles.viewMore}
-//     onClick={() => showMore()}>View More</button> */}

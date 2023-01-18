@@ -60,7 +60,11 @@
         {
             "id": 1,
             "title": "Countdown Timer",
-            "description": [""],
+            "description": [
+                "The project is a web application that allows users to create and publish custom timers. Built using React, Redux and Firebase, the application is designed to be user-friendly and interactive, providing users with a wide range of customization options.",
+                "The application allows users to create a timer using an interactive timer builder. Users can select how long they want the timer to run and choose a background color, gradient or image as the background of the timer. They can also change the color and font of the timer. Once the user has built their timer, they can publish it in the app, which allows each user to have a unique page where they can view the timer they built.",
+                "This application is intended for people who want to keep track of important events in their lives, such as countdown to a vacation, a wedding, or any other special occasion. The application also allows users to share their timers with others, making it easy for them to plan and organize events together. The application is designed to be easily scalable, allowing for an increase in the number of users and their interactions with the application. The application is also optimized for security, performance and maintainability. The application can be easily deployed on different environments, and can be easily integrated with other third party services."
+            ],
             "images": [
                 {
                     "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt1.png",
@@ -95,71 +99,100 @@
             ],
             "showcase": true,
             "video": "https://www.youtube.com/embed/Qt52J0p82ZQ",
-            "source": "",
-            "live": ""
-        },{
+            "source": "https://github.com/josuesossou/realcoundowntimer",
+            "live": "https://realcoundowntimer-josuesossou.vercel.app/"
+        },
+        {
             "id": 2,
-            "title": "Countdown Timer",
-            "description": ["Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut distinctio vel voluptatibus ratione molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro rem quod tempore, quae provident?"],
+            "title": "Praise Teams App",
+            "description": [
+                "The project is a mobile application built using Flutter, a popular open-source framework for building high-performance and visually attractive mobile apps. The app utilizes the power of AWS Amplify, a set of tools and services that enables developers to build cloud-powered applications with ease.",
+                "The app allows users to create worship events, where they can search for songs on YouTube and add them to their event. The app uses the YouTube API to search for songs, allowing users to easily find and add the songs they want to play. The app also allows users to add the key they want to play the song in and a link to the music sheet of the song, making it easy for users to prepare for the event.",
+                "The app also includes a feature for users to create accounts, allowing them to save their events and easily access them in the future. The app's user-friendly interface and powerful backend make it an ideal solution for church communities and other worship groups to plan and organize their events."
+            ],
             "images": [
                 {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw1.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw2.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw3.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw4.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw6.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw7.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw8.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/pwteams/pw9.png",
                     "details": ""
                 }
             ],
             "tools": [
                 {
-                    "name": "React",
-                    "icon": "reactIcon"
+                    "name": "Flutter",
+                    "icon": "flutterIcon"
                 },
                 {
-                    "name": "React",
-                    "icon": "reactIcon"
-                },
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                },
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
+                    "name": "AWS Amplify",
+                    "icon": "amplifyIcon"
                 }
             ],
-            "showcase": true
+            "showcase": true,
+            "source": "https://github.com/josuesossou/praise_team_app"
         },
         {
             "id": 3,
-            "title": "Countdown Timer",
-            "description": ["hello"],
+            "title": "Portfolio Website",
+            "description": [
+                "This project is my professional portfolio website, which showcases my proudest work and accomplishments. You are currently exploring its contents."
+            ],
             "images": [
                 {
-                    "img": "https://josueportfolioimages.s3.amazonaws.com/cdTimeImages/cdt3.png",
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/portfolio/portfolio1.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/portfolio/portfolio2.png",
+                    "details": ""
+                },
+                {
+                    "img": "https://josueportfolioimages.s3.amazonaws.com/portfolio/portfolio3.png",
                     "details": ""
                 }
             ],
             "tools": [
                 {
-                    "name": "React",
-                    "icon": "reactIcon"
+                    "name": "Typescript",
+                    "icon": "typescriptIcon"
                 },
                 {
-                    "name": "React",
-                    "icon": "reactIcon"
+                    "name": "NextJS",
+                    "icon": "nextjsIcon"
                 },
                 {
-                    "name": "React",
-                    "icon": "reactIcon"
-                },
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
-                },
-                {
-                    "name": "React",
-                    "icon": "reactIcon"
+                    "name": "Sass",
+                    "icon": "sassIcon"
                 }
             ],
-            "showcase": true
+            "showcase": true,
+            "source": "https://github.com/josuesossou/mysite"
         }
     ],
     "skills": [
@@ -169,7 +202,7 @@
         },
         {
             "name": "Typescript",
-            "icon": "angularIcon"
+            "icon": "typescriptIcon"
         },
         {
             "name": "React",

@@ -10,9 +10,11 @@ const ProjectCard = ({ data, openOverlay }: any) => {
         <div className={styles.pCard} >
             <div className={styles.cardImage}>
                 <Image 
+                    alt='Project image'
                     loading="lazy"
-                    layout="fill"
-                    objectFit="contain"
+                    fill={true}
+                    sizes='1x'
+                    style={{ objectFit: "contain"}}
                     src={project.images[0].img}   
                 />
             </div>
@@ -20,15 +22,17 @@ const ProjectCard = ({ data, openOverlay }: any) => {
             <div className={styles.projDesc}>
                 <h3>{project.title}</h3>
                 <br></br>
-                <article>{project.description[0]}</article>
+                <article>{project.description[0].substring(0, 300)}</article>
 
                 <div>
                     {project.tools.map((tool, ind) => (
                         <div key={ind} className={styles.tools}>
                             <div>
                                 <Image 
-                                    layout="fill"
-                                    objectFit="cover"
+                                    alt={`${tool.name} logo`}
+                                    fill={true}
+                                    sizes='1x'
+                                    style={{ objectFit: "cover"}}
                                     src={toolsIcons[tool.icon]}
                                 />
                             </div>

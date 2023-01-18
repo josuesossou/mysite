@@ -11,9 +11,11 @@ const SkillCard = ({ data }: any) => {
             
             <div className={styles.cardImage}>
                 <Image 
+                    alt='Skill logo'
                     loading="lazy"
-                    layout="fill"
-                    objectFit="contain"
+                    sizes='1x'
+                    fill
+                    style={{objectFit: "contain"}}
                     src={toolsIcons[skill.icon]}   
                 />
             </div>
