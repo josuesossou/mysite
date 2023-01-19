@@ -21,7 +21,7 @@ const PdfOverlay = ({ showResume }: any) => {
     return (
         <div className={styles.pdfOverlay}>
             <div className={styles.overlay}>
-                <embed src='https://josueportfolioimages.s3.amazonaws.com/JSResume.pdf#view=Fit&navpanes=0' width='100%' height='100%' />
+                <embed src='https://josueportfolioimages.s3.amazonaws.com/JS_Resume.pdf#view=Fit&navpanes=0' width='100%' height='100%' />
                 <button className={styles.closeBtn} onClick={closeResume} />
             </div>
         </div>
