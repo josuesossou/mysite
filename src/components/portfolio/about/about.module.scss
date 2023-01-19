@@ -6,9 +6,8 @@
     article {
         margin: 0 auto;
         max-width: 50ch;
-        font-size: 1.5rem;
-
-        text-align: center;
+        font-size: 1.1rem;
+        text-align: left;
         word-spacing: 0;
         line-height: 2.3ch;
     }
@@ -16,7 +15,7 @@
     @media (min-width: 55em) {
         article {
             word-spacing: .43ch;
-            text-align: left;
+            font-size: 1.5rem;
         }
     }
 }
