@@ -67,7 +67,7 @@ const NavLinks = () => {
                 </li>
 
                 <li>
-                    <Link href="/#skills">
+                    <Link href="/#contact">
                         <FontAwesomeIcon icon={faContactCard} size={"1x"} color={'white'} />
                     </Link>
                 </li>
