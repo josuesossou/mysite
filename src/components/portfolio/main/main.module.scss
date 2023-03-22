@@ -3,7 +3,7 @@
 .header {
     min-height: 100vh;
     min-height: 100dvh;
-    background: var(--radial-gradiant);
+    background: var(--inset-bg-color);
     box-shadow: 0 0 0 100vmax var(--inset-bg-color);
     clip-path: inset(0 -100vmax);
     display: grid;
